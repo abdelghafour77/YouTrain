@@ -1,17 +1,15 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTrain signup</title>
-                      <!-- parsley -->
+    <!-- parsley -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css">
-                  <!-- end of Parsley -->
+    <!-- end of Parsley -->
     <!-- ================== BEGIN core-css ================== -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css%22%3E">
@@ -20,26 +18,26 @@
 </head>
 
 <body>
- <style>
-        body{
-  background-image: url(assets/img/yay.jpg);
-  background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
+    <style>
+        body {
+            background-image: url(assets/img/yay.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
     </style>
-        <div class="form-style mx-auto py-4">
-           <form action="./models/user.php" method="POST" id="form" data-parsley-validate>
-                <h3>please regist</h3>
-                <input type="text" name="first_name"  placeholder="First Name" required>
-                   <input type="text" name="last_name"  placeholder="Last Name" required>
-                     <input type="email" name="email"  placeholder="email" required>
-                         <input type="password" name="password" id="pass"  placeholder="password"  data-parsley-minlenght="5" data-parsley-message="set a password more than 5 characters" required>
-                         <input type="password"  id="cpass"  placeholder="confirm your password" data-parsley-equalto="#pass" data-parsley-message="confirm the password"  required >
-                     <input type="submit" name="signup" value="register now" class="form-btn">
-                   <h3 class="fs-5 m-3 text-light">already have an account?<a class="text-decoration-none text-danger" href="login.php">login now</a></h3>
-            </form>
-        </div>   
+    <div class="form-style mx-auto py-4">
+        <form action="./controllers/userController.php" method="POST" id="form" data-parsley-validate>
+            <h3>please regist</h3>
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" placeholder="email" required>
+            <input type="password" name="password" id="pass" placeholder="password" data-parsley-minlenght="5" data-parsley-message="set a password more than 5 characters" required>
+            <input type="password" id="cpass" placeholder="confirm your password" data-parsley-equalto="#pass" data-parsley-message="confirm the password" required>
+            <input type="submit" name="signup" value="register now" class="form-btn">
+            <h3 class="fs-5 m-3 text-light">already have an account?<a class="text-decoration-none text-danger" href="login.php">login now</a></h3>
+        </form>
+    </div>
 </body>
 
 
