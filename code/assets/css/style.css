@@ -1,0 +1,74 @@
+body {
+    overflow-x: hidden;
+}
+
+.form-style {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 48px;
+    margin-right: 55%;
+}
+
+.form-style form {
+    padding: 23px;
+    text-align: center;
+    width: 534px;
+    background: rgba(54, 125, 184, 0.5);
+    box-shadow: 12px 12px 22px;
+}
+
+.form-style form h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.form-style form input,
+.form-style form select {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 8px 0;
+    border-radius: 5px;
+}
+
+.form-style form option {
+    background: #fff;
+}
+
+.form-style form .form-btn {
+    background: white;
+    color: blueviolet;
+    text-transform: capitalize;
+}
+
+.form-style form .form-btn:hover {
+    background: blue;
+    color: white;
+}
+
+.form-style small {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.list ul li {
+    color: red;
+}
+
+.image {
+    background: rgba(40, 152, 172, 0.5);
+    width: 20%;
+}
+
+.par {
+    font-size: 40px;
+    position: absolute;
+    right: 33%;
+    top: 21%;
+    color: rgb(26, 26, 188);
+}
