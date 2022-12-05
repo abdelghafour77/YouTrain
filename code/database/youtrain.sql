@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 02, 2022 at 09:36 AM
+-- Generation Time: Dec 05, 2022 at 09:29 AM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -486,6 +486,7 @@ CREATE TABLE IF NOT EXISTS `stations` (
   `name` varchar(60) NOT NULL,
   `address` text NOT NULL,
   `capacity` int NOT NULL,
+  `city_id` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 

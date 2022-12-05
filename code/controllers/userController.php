@@ -1,6 +1,6 @@
 <?php
-
 require_once '../models/user.php';
+
 if (isset($_POST['signup'])) {
     extract($_POST);
     $user = new User($email, $password, $first_name, $last_name);
