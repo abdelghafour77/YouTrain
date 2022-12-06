@@ -39,8 +39,8 @@ class User extends Connection
             header('location: ../login.php');
         } else {
             // for hashed password
-            //   $res = password_verify($this->password, $result["password"]);
-            $res = ($result["password"] == $this->password) ? true : false;
+            $res = password_verify($this->password, $result["password"]);
+            // $res = ($result["password"] == $this->password) ? true : false;
             if ($res) {
                 header('location:../index.php');
             } else {
@@ -50,5 +50,4 @@ class User extends Connection
         }
         die;
     }
-
 }
