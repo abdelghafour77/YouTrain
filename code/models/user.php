@@ -4,17 +4,24 @@ session_start();
 
 class User extends Connection
 {
+    public $id;
     public $first_name;
     public $last_name;
     public $email;
+    public $phone;
+    public $age;
     public $password;
 
-    function __construct($email, $password, $first_name = null, $last_name = null)
+
+    function __construct($email, $password, $first_name = null, $last_name = null, $phone = null, $age = null, $id = null)
     {
         $this->first_name = $first_name;
         $this->last_name = $last_name;
         $this->email = $email;
         $this->password = $password;
+        $this->age = $age;
+        $this->phone = $phone;
+        $this->id = $id;
     }
 
     public function registration()
@@ -55,6 +62,26 @@ class User extends Connection
                 header('location:../login.php');
             }
         }
+        die;
+    }
+    public function updateUser()
+    {
+
+        $_SESSION['id'] = $_POST['id'];
+        $_SESSION['first_name'] = $_POST['first_name'];
+        $_SESSION['last_name'] = $_POST['last_name'];
+        $_SESSION['age'] = $_POST['age'];
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['phone'] = $_POST['phone'];
+        $_SESSION['password'] = $_POST['password'];
+
+        $upd = "UPDATE `users` SET `first_name`= ? ,`last_name`= ? ,`age`= ? ,`email`= ? ,`phone`= ? ,`password`= ?  WHERE `id` = ?";
+        $stmt = $this->connect()->prepare($upd);
+        $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $this->id]);
+        // var_dump($this);
+        // die;
+        header('location:../edituser.php');
+
         die;
     }
 }
