@@ -42,6 +42,13 @@ class User extends Connection
             $res = password_verify($this->password, $result["password"]);
             // $res = ($result["password"] == $this->password) ? true : false;
             if ($res) {
+                $_SESSION['id'] = $result['id'];
+                $_SESSION['first_name'] = $result['first_name'];
+                $_SESSION['last_name'] = $result['last_name'];
+                $_SESSION['age'] = $result['age'];
+                $_SESSION['email'] = $result['email'];
+                $_SESSION['phone'] = $result['phone'];
+                $_SESSION['password'] = $result['password'];
                 header('location:../index.php');
             } else {
                 $_SESSION['message'] = 'Mot de passe incorrect';
