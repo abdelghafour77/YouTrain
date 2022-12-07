@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 05, 2022 at 09:29 AM
+-- Generation Time: Dec 07, 2022 at 02:06 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -488,7 +488,14 @@ CREATE TABLE IF NOT EXISTS `stations` (
   `capacity` int NOT NULL,
   `city_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `stations`
+--
+
+INSERT INTO `stations` (`id`, `name`, `address`, `capacity`, `city_id`) VALUES
+(1, 'bla bla', 'ghtjgyhjkgdjf', 900, 75);
 
 -- --------------------------------------------------------
 
@@ -556,6 +563,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) NOT NULL,
   `phone` varchar(18) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
+  `admin` int NOT NULL DEFAULT '0',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL,
   `updated_by` int NOT NULL,
