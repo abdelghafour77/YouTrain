@@ -17,6 +17,7 @@ class User extends Connection
         $this->password = $password;
     }
 
+
     public function registration()
     {
         $ins = "INSERT INTO `users` (first_name,last_name,email,password)VALUES(?,?,?,?)";

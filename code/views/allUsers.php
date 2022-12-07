@@ -1,6 +1,6 @@
 <?php
 include_once './models/user.php';
-$all_users = new user();
+$all_users = new User();
 $users = $all_users->allUsers();
 // var_dump($users);
 // die;
