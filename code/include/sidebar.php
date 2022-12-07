@@ -17,37 +17,37 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link active mt-2">
+                        <a href="customers.php" class="nav-link active mt-2">
                             <span class="me-4"><i class="bi bi-people-fill"></i></span>
                             <span>Customers</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link active mt-2">
+                        <a href="cities.php" class="nav-link active mt-2">
                             <span class="me-4"><i class="bi bi-building"></i></span>
                             <span>Cities</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link active mt-2">
+                        <a href="stations.php" class="nav-link active mt-2">
                             <span class="me-4"><i class="bi bi-signpost-2"></i></span>
                             <span>Stations</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link active mt-2">
+                        <a href="trains.php" class="nav-link active mt-2">
                             <span class="me-4"><i class="bi bi-square-fill"></i></i></span>
                             <span>Trains</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link active mt-2">
+                        <a href="travels.php" class="nav-link active mt-2">
                             <span class="me-4"><i class="bi bi-calendar2-check"></i></i></span>
                             <span>Travels</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link active mt-2">
+                        <a href="tickets.php" class="nav-link active mt-2">
                             <span class="me-4"><i class="bi bi-aspect-ratio"></i></i></span>
                             <span>E-tickets</span>
                         </a>
