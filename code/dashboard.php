@@ -64,7 +64,7 @@
             <div class="col mb-3">
                 <div class="card card-statis text-white">
                     <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-calendar2-check fs-3 text-dark text-center"></i></div>
+                        <div><i class="bi bi-train-front-fill fs-3 text-dark text-center"></i></div>
                         <div class="text-truncate">
                             <h5 class="card-title">Total Trains</h5>
                             <p class="card-text fs-5">Trains</p>

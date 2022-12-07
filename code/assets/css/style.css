@@ -141,6 +141,7 @@ main {
     background-color: #83a4d4 !important;
 }
 
+
 @media (min-width: 992px) {
     .sidebar-nav {
         transform: none !important;
