@@ -8,12 +8,12 @@ $users = $all_users->allUsers();
 <table id="data-table" class="display dataTable" style="width: 100%" aria-describedby="example_info">
     <thead>
         <tr>
-            <th class="sorting sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 131.163px">Full Name</th>
-            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 218.163px">Email</th>
-            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 96.9625px">Phone Number</th>
-            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 39.0125px">Age</th>
-            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 85.55px">Admin</th>
-            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 73.3px">Actions</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Age</th>
+            <th>Admin</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +21,7 @@ $users = $all_users->allUsers();
         foreach ($users as $user) {
         ?>
 
-            <tr class="odd">
+            <tr>
                 <td class="sorting_1"><?= $user['first_name'] . " " . $user['last_name']  ?></td>
                 <td><?= $user['email'] ?></td>
                 <td><?= $user['phone'] ?></td>
@@ -31,8 +31,7 @@ $users = $all_users->allUsers();
                 </td>
                 <td>
                     <div class="d-flex fs-3">
-                        <a href="" class="btn btn-warning me-3"><i class="bi bi-pencil-square users-icon"></i></a>
-                        <a href="" class="btn btn-danger text-dark"><i class="bi bi-trash3-fill users-icon"></i></a>
+                        <a href="" class="btn btn-warning me-3"><i class="bi bi-pencil-square users-icon mr"></i> Edit Profil</a>
                     </div>
                 </td>
             </tr>

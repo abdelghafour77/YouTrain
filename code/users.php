@@ -1,5 +1,5 @@
 <?php
-$title = "All Users| Trainpal";
+$title = "All Users | Trainpal";
 include("include/head.php");
 ?>
 
@@ -15,7 +15,7 @@ include("include/head.php");
    ?>
    <!-- END Offcanvas -->
    <main class="mb-4">
-      <div class="mt-3 mb-4 fs-2">
+      <div class="mt-3 mb-4 fs-2 ms-2">
          <span class="me-2"><i class="bi bi-people-fill"></i></span>
          <span>All Users</span>
       </div>
@@ -30,6 +30,7 @@ include("include/head.php");
    <script>
       $(document).ready(function() {
          $("#data-table").DataTable({
+            scrollX: true,
             info: false,
             responsive: true,
          });

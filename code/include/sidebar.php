@@ -24,7 +24,7 @@
                 </li>
                 <li>
                     <a href="cities.php" class="nav-link active mt-2">
-                        <span class="me-4"><i class="bi bi-building"></i></span>
+                        <span class="me-4"><i class="bi bi-buildings"></i></span>
                         <span>Cities</span>
                     </a>
                 </li>
