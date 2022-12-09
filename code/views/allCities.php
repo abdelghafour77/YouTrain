@@ -14,7 +14,7 @@ $cities = $all_cities->allCities();
         <?php
         foreach ($cities as $city) {
         ?>
-            <tr class="odd" <?= "id = " . $city['id']; ?> <?= "city = " . $city['name']; ?>>
+            <tr class="odd"  id = "<?= $city['id']; ?>"  city = "<?=$city['name']; ?>">
                 <td class="sorting_1"><?= $city['name'] ?></td>
                 <td>
                     <div class="d-flex fs-3">

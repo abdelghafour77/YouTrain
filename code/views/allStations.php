@@ -20,8 +20,8 @@ $stations = $all_stations->allStations();
         <?php
             foreach ($stations as $station) {
         ?>
-            <tr class="odd" <?= "id = " . $station['id']; ?> <?= "station = " . $station['name']; ?> <?= "address = " . $station['address']; ?>
-            <?= "capacity = " . $station['capacity']; ?> <?= "city = " . $station['city_id']; ?>>
+            <tr class="odd" id = "<?= $station['id'];?>"  station = "<?= $station['name']; ?>"  address = "<?=$station['address'];?>"
+            capacity = "<?= $station['capacity'];?>" city = "<?= $station['city_id'];?>">
                 <td class="sorting_1"><?= $station['name'];?></td>
                 <td class=""><?= $station['address'];?></td>
                 <td class=""><?= $station['capacity'];?></td>

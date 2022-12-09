@@ -1,5 +1,5 @@
 <?php
-    $title = "Customers| Trainpal";
+    $title = "Trains | Trainpal";
     include("include/head.php");
 ?>
 <body class="bg-light">
@@ -43,5 +43,4 @@
         });
     </script>
     <script src="assets/js/main.js"></script>
-</body>
 </body>

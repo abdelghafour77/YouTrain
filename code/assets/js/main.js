@@ -16,19 +16,25 @@ function displayBottom(){
 }
 
 function editCity(id){
-
         displayBottom();
         document.getElementById("city-id").value = id;
         document.getElementById('city-name').value = document.getElementById(id).getAttribute("city");
 }
 
 function editStation(id){
-
         displayBottom();
         document.getElementById("station-id").value = id;
         document.getElementById('station-name').value = document.getElementById(id).getAttribute("station");
         document.getElementById('station-address').value = document.getElementById(id).getAttribute("address");
         document.getElementById('station-capacity').value = document.getElementById(id).getAttribute("capacity");
         document.getElementById('station-city').value = document.getElementById(id).getAttribute("city");
+}
+
+function editTrain(id){
+        displayBottom();
+        document.getElementById("train-id").value = id;
+        document.getElementById('train-name').value = document.getElementById(id).getAttribute("train");
+        document.getElementById('train-capacity').value = document.getElementById(id).getAttribute("capacity");
+        document.getElementById('train-type').value = document.getElementById(id).getAttribute("type");
 }
 
