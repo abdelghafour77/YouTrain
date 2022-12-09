@@ -18,6 +18,11 @@ class Station extends Connection
         $this->city = $city;
     }
 
+    function getId($id)
+    {
+        $this->id = $id;
+    }
+
     public function allStations()
     {
         $sql = "SELECT stations.*,
@@ -47,5 +52,19 @@ class Station extends Connection
         $sql = "INSERT INTO `stations`(`name`, `address`, `capacity`, `city_id`) VALUES (?, ?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->name, $this->address, $this->capacity, $this->city]);
+    }
+
+    public function deleteStation()
+    {
+        $sql = "DELETE FROM stations WHERE id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$this->id]);
+    }
+
+    public function updateStation()
+    {
+        $sql = "UPDATE `stations` SET `name`= ? ,`address`= ?,`capacity`= ?,`city_id`= ? WHERE id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$this->name, $this->address, $this->capacity, $this->city, $this->id]);
     }
 }
