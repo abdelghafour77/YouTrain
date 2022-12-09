@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 07, 2022 at 02:06 PM
+-- Generation Time: Dec 09, 2022 at 08:49 AM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -31,7 +31,7 @@ USE `youtrain`;
 
 DROP TABLE IF EXISTS `bookings`;
 CREATE TABLE IF NOT EXISTS `bookings` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `travel_id` int NOT NULL,
   `nbr_adults` int NOT NULL,
@@ -39,7 +39,14 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`id`, `user_id`, `travel_id`, `nbr_adults`, `nbr_kids`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, 0, '2022-12-09 08:48:43', '2022-12-09 08:48:43');
 
 -- --------------------------------------------------------
 
@@ -488,14 +495,15 @@ CREATE TABLE IF NOT EXISTS `stations` (
   `capacity` int NOT NULL,
   `city_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Dumping data for table `stations`
 --
 
 INSERT INTO `stations` (`id`, `name`, `address`, `capacity`, `city_id`) VALUES
-(1, 'bla bla', 'ghtjgyhjkgdjf', 900, 75);
+(1, 'youssoufia', 'ghtjgyhjkgdjf', 900, 75),
+(2, 'marrakech', 'bla bla', 3200, 103);
 
 -- --------------------------------------------------------
 
@@ -510,7 +518,14 @@ CREATE TABLE IF NOT EXISTS `trains` (
   `capacity` int NOT NULL,
   `type_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `trains`
+--
+
+INSERT INTO `trains` (`id`, `name`, `capacity`, `type_id`) VALUES
+(1, 'N304', 270, 1);
 
 -- --------------------------------------------------------
 
@@ -532,7 +547,14 @@ CREATE TABLE IF NOT EXISTS `travels` (
   `updated_by` int NOT NULL,
   `train_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `travels`
+--
+
+INSERT INTO `travels` (`id`, `time`, `price`, `start_station_id`, `end_station_id`, `date_start`, `created_at`, `updated_at`, `created_by`, `updated_by`, `train_id`) VALUES
+(1, 3, 90, 1, 2, '2022-12-09 10:12:05', '2022-12-08 10:12:05', '2022-12-08 10:12:05', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -546,7 +568,15 @@ CREATE TABLE IF NOT EXISTS `type_trains` (
   `name` varchar(50) NOT NULL,
   `speed` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `type_trains`
+--
+
+INSERT INTO `type_trains` (`id`, `name`, `speed`) VALUES
+(1, 'atlas', 130),
+(2, 'bouraq', 320);
 
 -- --------------------------------------------------------
 
@@ -568,7 +598,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NOT NULL,
   `updated_by` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `age`, `email`, `phone`, `password`, `admin`, `created_at`, `updated_at`, `updated_by`) VALUES
+(1, 'abdelghafour', 'aouad', 22, 'abdelghafour@gmail.com', '0620785937', 'hello', 1, '2022-12-08 08:49:36', '2022-12-08 08:49:36', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
