@@ -38,3 +38,11 @@ function editTrain(id){
         document.getElementById('train-type').value = document.getElementById(id).getAttribute("type");
 }
 
+function editTravel(id){
+        displayBottom();
+        document.getElementById("train-id").value = id;
+        document.getElementById('train-name').value = document.getElementById(id).getAttribute("train");
+        document.getElementById('train-capacity').value = document.getElementById(id).getAttribute("capacity");
+        document.getElementById('train-type').value = document.getElementById(id).getAttribute("type");
+}
+

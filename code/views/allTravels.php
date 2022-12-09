@@ -2,14 +2,22 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Capacity</th>
-            <th>Type</th>
+            <th>Time</th>
+            <th>Price</th>
+            <th>Start Station</th>
+            <th>End Station</th>
+            <th>Date Start</th>
+            <th>Train</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
             <tr class="odd">
                 <td class="sorting_1"></td>
+                <td class=""></td>
+                <td class=""></td>
+                <td class=""></td>
+                <td class=""></td>
                 <td class=""></td>
                 <td class=""></td>
                 <td>

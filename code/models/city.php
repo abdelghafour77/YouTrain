@@ -35,7 +35,7 @@ class City extends Connection
 
     public function deleteCity()
     {
-        $sql = "DELETE FROM cities WHERE id = ?";
+        $sql = "DELETE FROM cities WHERE id = ?,";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->id]);
     }
