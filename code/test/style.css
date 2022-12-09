@@ -829,6 +829,7 @@ legend {
 }
 
 .s007 {
+      top: -290px;
       min-height: 100vh;
       display: -ms-flexbox;
       display: flex;
@@ -1195,9 +1196,9 @@ h1 {
       position: relative;
 }
 
-.card+.card {
+/* .card+.card {
       margin-left: 2%;
-}
+} */
 
 .date {
       display: table-cell;
@@ -1334,4 +1335,8 @@ h1 {
 
 body {
       background-color: #dadde6;
+}
+
+.masthead {
+      height: 290px;
 }
