@@ -40,9 +40,13 @@ function editTrain(id){
 
 function editTravel(id){
         displayBottom();
-        document.getElementById("train-id").value = id;
-        document.getElementById('train-name').value = document.getElementById(id).getAttribute("train");
-        document.getElementById('train-capacity').value = document.getElementById(id).getAttribute("capacity");
-        document.getElementById('train-type').value = document.getElementById(id).getAttribute("type");
+        document.getElementById("travel-id").value = id;
+        document.getElementById('travel-time').value = document.getElementById(id).getAttribute("time");
+        document.getElementById('travel-price').value = document.getElementById(id).getAttribute("price");
+        document.getElementById('end').value = document.getElementById(id).getAttribute("end");
+        document.getElementById('travel-start').value = document.getElementById(id).getAttribute("start");
+        document.getElementById('date').value = document.getElementById(id).getAttribute("date");
+        document.getElementById('train').value = document.getElementById(id).getAttribute("train");
 }
+
 
