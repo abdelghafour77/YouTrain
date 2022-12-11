@@ -348,7 +348,7 @@ nav {
     color: #989898;
     margin-bottom: 10px;
     font-family: Oswald, sans-serif;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     border-radius: 4px;
     position: relative
 }
@@ -447,7 +447,7 @@ nav {
     text-decoration: none;
     width: 80px;
     height: 30px;
-    background-color: #d8dde0;
+    /* background-color: #d8dde0; */
     color: #fff;
     text-align: center;
     line-height: 30px;
@@ -455,6 +455,14 @@ nav {
     position: absolute;
     right: 10px;
     bottom: 10px
+}
+
+.book {
+    background-color: rgb(58, 189, 6);
+}
+
+.disabled {
+    background-color: #d8dde0;
 }
 
 @media screen and (max-width:860px) {
