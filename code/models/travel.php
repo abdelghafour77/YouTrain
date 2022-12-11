@@ -76,8 +76,10 @@ class Travel extends Connection
 
     public function updateTravel()
     {
-        $sql = "UPDATE `travels` SET `time`= ?,`price`= ?,`start_station_id`= ?,`end_station_id`= ?,`date_start`= ?, `train_id`='[value-11]' WHERE id = ?";
+        $sql = "UPDATE `travels` SET `time`= ?,`price`= ?,`start_station_id`= ?,`end_station_id`= ?,`date_start`= ?, `train_id`= ? WHERE id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->time, $this->price, $this->start, $this->end, $this->date, $this->train, $this->id]);
+        // var_dump($stmt);
+        // die;
     }
 }

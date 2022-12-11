@@ -19,6 +19,8 @@ if (isset($_GET['id'])) {
 if (isset($_POST['update'])) {
     extract($_POST);
     $travel = new Travel($id, $time, $price, $start, $end, $date, $train);
+    // var_dump($travel);
+    // die;
     $travel->updateTravel();
     header('location:../travels.php');
 }
