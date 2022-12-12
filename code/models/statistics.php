@@ -6,9 +6,10 @@
 
         public function statistics_count($param){
     
-            $sql = "SELECT COUNT(*) FROM '".$param."'";
+            $sql = "SELECT COUNT(*) FROM ".$param;
             $stmt= $pdo->prepare($sql);
             $stmt = execute(); //[$name, $surname, $sex]
+            $stmt = fetchAll();
     
     //hhhhh
             return $stmt;
