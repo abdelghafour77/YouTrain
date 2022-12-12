@@ -1,6 +1,6 @@
 <?php
 require 'connection.php';
-session_start();
+// session_start();
 
 class User extends Connection
 {
@@ -14,6 +14,7 @@ class User extends Connection
 
 
     function __construct($email, $password, $first_name = null, $last_name = null, $phone = null, $age = null, $id = null)
+
     {
         $this->first_name = $first_name;
         $this->last_name = $last_name;
@@ -23,6 +24,7 @@ class User extends Connection
         $this->phone = $phone;
         $this->id = $id;
     }
+
 
     public function registration()
     {
@@ -83,5 +85,14 @@ class User extends Connection
         header('location:../edituser.php');
 
         die;
+
+    public function allUsers()
+    {
+        $sql = "SELECT * FROM users";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+
     }
 }
