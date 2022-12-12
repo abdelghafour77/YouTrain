@@ -17,12 +17,12 @@
         <div class="row">
             <div class="col-12 col-md-8">
                 <div class="card first-cards card-bg">
-                    <div class="d-flex">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="row row-cols-2">
+                        <div class="col card-body">
+                            <h5 class="card-title">Welcome Back</h5>
+                            <p class="card-text">Have a nice day at work.</p>
                         </div>
-                        <div>
+                        <div class="col">
                             <img src="assets/img/juicy-man-studying-financial-analytics.gif" class="img-fluid gif ms-0 ms-md-4 d-none d-sm-block" alt="Juicy man">
                         </div>
                     </div>
@@ -38,12 +38,12 @@
             </div>
         </div>    
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-4">
             <div class="col mb-3">
                 <div class="card card-statis text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-signpost-2 fs-3 text-dark text-center"></i></div>
-                        <div class="text-truncate">
+                    <div class="card-body row row-cols-2 justify-content-around align-items-center mt-3 mb-3">
+                        <div><i class="col bi bi-signpost-2 fs-3 text-dark text-center ms-5"></i></div>
+                        <div class="col text-truncate">
                             <h5 class="card-title">Total Stations</h5>
                             <p class="card-text fs-5">Stations</p>
                         </div>
@@ -52,9 +52,9 @@
             </div>
             <div class="col mb-3">
                 <div class="card card-statis text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-people fs-3 text-dark text-center me-1"></i></div>
-                        <div class="text-truncate">
+                    <div class="card-body row row-cols-2 justify-content-around align-items-center mt-3 mb-3">
+                        <div><i class="col bi bi-people fs-3 text-dark text-center me-1 ms-5"></i></div>
+                        <div class="col text-truncate">
                             <h5 class="card-title">Total Customers</h5>
                             <p class="card-text fs-5">Customers</p>
                         </div>
@@ -63,9 +63,9 @@
             </div>
             <div class="col mb-3">
                 <div class="card card-statis text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-calendar2-check fs-3 text-dark text-center"></i></div>
-                        <div class="text-truncate">
+                    <div class="card-body row row-cols-2 justify-content-around align-items-center mt-3 mb-3">
+                        <div><i class="col bi bi-train-front-fill fs-3 text-dark text-center ms-5"></i></div>
+                        <div class="col text-truncate">
                             <h5 class="card-title">Total Trains</h5>
                             <p class="card-text fs-5">Trains</p>
                         </div>
@@ -74,9 +74,9 @@
             </div>
             <div class="col mb-3">
                 <div class="card card-statis text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-aspect-ratio fs-3 text-dark text-center"></i></div>
-                        <div class="text-truncate">
+                    <div class="card-body row row-cols-2 justify-content-around align-items-center mt-3 mb-3">
+                        <div><i class="col bi bi-aspect-ratio fs-3 text-dark text-center ms-5"></i></div>
+                        <div class="col text-truncate">
                             <h5 class="card-title">Available E-tickets</h5>
                             <p class="card-text fs-5"> $</p>
                         </div>
@@ -85,9 +85,9 @@
             </div>
             <div class="col mb-3">
                 <div class="card card-statis text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-aspect-ratio fs-3 text-dark text-center"></i></div>
-                        <div class="text-truncate">
+                    <div class="card-body row row-cols-2 justify-content-around align-items-center mt-3 mb-3">
+                        <div><i class="col bi bi-aspect-ratio fs-3 text-dark text-center ms-5"></i></div>
+                        <div class="col text-truncate">
                             <h5 class="card-title">Reserved E-tickets</h5>
                             <p class="card-text fs-5"> $</p>
                         </div>
@@ -96,9 +96,9 @@
             </div>
             <div class="col">
                 <div class="card card-statis text-white">
-                    <div class="card-body d-flex flex-row justify-content-around align-items-center mt-3 mb-3">
-                        <div><i class="bi bi-aspect-ratio fs-3 text-dark text-center"></i></div>
-                        <div class="text-truncate">
+                    <div class="card-body row row-cols-2 justify-content-around align-items-center mt-3 mb-3">
+                        <div><i class="col bi bi-aspect-ratio fs-3 text-dark text-center ms-5"></i></div>
+                        <div class="col text-truncate">
                             <h5 class="card-title">Remaining E-tickets</h5>
                             <p class="card-text fs-5"> $</p>
                         </div>
