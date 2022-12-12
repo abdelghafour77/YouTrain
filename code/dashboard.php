@@ -71,7 +71,9 @@ $dash_statistics = new Statistics;
                         <div><i class="bi bi-calendar2-check fs-3 text-dark text-center"></i></div>
                         <div class="text-truncate">
                             <h5 class="card-title">Total Trains</h5>
-                            <p class="card-text fs-5"><?php $dash_statistics->statistics_count('trains'); ?>Trains</p>
+
+                            <p class="card-text fs-5"><?php $dash_statistics->statistics_count('trains')['COUNT(*)']; ?>Trains</p>
+
                         </div>
                     </div>
                 </div>

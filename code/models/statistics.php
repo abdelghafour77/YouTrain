@@ -4,7 +4,6 @@ require 'connection.php';
 class Statistics extends Connection
 {
 
-
     public function statistics_count($param)
     {
 
