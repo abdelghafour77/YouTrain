@@ -1,8 +1,5 @@
 <?php
-session_start();
-if (isset($_SESSION['id'])) {
-    header('location: index.php');
-}
+require_once 'include/role.php';
 ?>
 
 
