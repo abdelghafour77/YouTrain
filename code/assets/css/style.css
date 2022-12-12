@@ -143,6 +143,12 @@ main {
     background-color: #83a4d4 !important;
 }
 
+#data-table_wrapper {
+    margin-right: 27px !important;
+    margin-left: 10px !important;
+}
+
+
 @media (min-width: 992px) {
     .sidebar-nav {
         transform: none !important;
@@ -170,6 +176,7 @@ main {
     }
 
 }
+
 
 /* ////////// end boutaina //////////// */
 /* ------------------------------------ */
