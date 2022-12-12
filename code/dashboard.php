@@ -1,6 +1,9 @@
 <?php
     $title = "Dashboard | Trainpal";
     include("include/head.php");
+    include("models/statistics.php");
+     $dash_statistics = new Statistics;
+    
 ?>
 <body class="bg-light">
     <!-- Begin navbar -->
@@ -45,7 +48,7 @@
                         <div><i class="bi bi-signpost-2 fs-3 text-dark text-center"></i></div>
                         <div class="text-truncate">
                             <h5 class="card-title">Total Stations</h5>
-                            <p class="card-text fs-5">Stations</p>
+                            <p class="card-text fs-5"><?php $dash_statistics-> statistics_count('stations');?>Stations</p>
                         </div>
                     </div>
                 </div>
@@ -56,7 +59,7 @@
                         <div><i class="bi bi-people fs-3 text-dark text-center me-1"></i></div>
                         <div class="text-truncate">
                             <h5 class="card-title">Total Customers</h5>
-                            <p class="card-text fs-5">Customers</p>
+                            <p class="card-text fs-5"><?php $dash_statistics-> statistics_count('users');?>Customers</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +70,7 @@
                         <div><i class="bi bi-calendar2-check fs-3 text-dark text-center"></i></div>
                         <div class="text-truncate">
                             <h5 class="card-title">Total Trains</h5>
-                            <p class="card-text fs-5">Trains</p>
+                            <p class="card-text fs-5"><?php $dash_statistics-> statistics_count('trains');?>Trains</p>
                         </div>
                     </div>
                 </div>
