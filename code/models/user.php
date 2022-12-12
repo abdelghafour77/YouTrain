@@ -13,7 +13,7 @@ class User extends Connection
     public $password;
 
 
-    function __construct($email, $password, $first_name = null, $last_name = null, $phone = null, $age = null, $id = null)
+    function __construct($email = null, $password = null, $first_name = null, $last_name = null, $phone = null, $age = null, $id = null)
 
     {
         $this->first_name = $first_name;
@@ -85,6 +85,7 @@ class User extends Connection
         header('location:../edituser.php');
 
         die;
+    }
 
     public function allUsers()
     {
@@ -93,6 +94,5 @@ class User extends Connection
         $stmt->execute();
         $result = $stmt->fetchAll();
         return $result;
-
     }
 }
