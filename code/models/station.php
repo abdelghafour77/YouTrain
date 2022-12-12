@@ -1,5 +1,8 @@
 <?php
-require 'connection.php';
+require_once 'connection.php';
+
+
+
 
 class Station extends Connection
 {
@@ -38,6 +41,7 @@ class Station extends Connection
         return $result;
     }
 
+
     public function allCities()
     {
         $sql = "SELECT * FROM cities";
@@ -67,4 +71,5 @@ class Station extends Connection
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->name, $this->address, $this->capacity, $this->city, $this->id]);
     }
+
 }

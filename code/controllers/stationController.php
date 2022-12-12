@@ -1,4 +1,5 @@
 <?php
+
 require_once '../models/station.php';
 
 if (isset($_POST['save'])) {
@@ -22,3 +23,4 @@ if (isset($_POST['update'])) {
     $station->updateStation();
     header('location:../stations.php');
 }
+

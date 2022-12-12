@@ -3,7 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
+
 -- Generation Time: Dec 09, 2022 at 08:49 AM
+
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -495,15 +497,20 @@ CREATE TABLE IF NOT EXISTS `stations` (
   `capacity` int NOT NULL,
   `city_id` int NOT NULL,
   PRIMARY KEY (`id`)
+
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+
 
 --
 -- Dumping data for table `stations`
 --
 
 INSERT INTO `stations` (`id`, `name`, `address`, `capacity`, `city_id`) VALUES
+
+
 (1, 'youssoufia', 'ghtjgyhjkgdjf', 900, 75),
 (2, 'marrakech', 'bla bla', 3200, 103);
+
 
 -- --------------------------------------------------------
 
