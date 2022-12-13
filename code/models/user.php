@@ -57,7 +57,7 @@ class User extends Connection
                 $_SESSION['age'] = $result['age'];
                 $_SESSION['email'] = $result['email'];
                 $_SESSION['phone'] = $result['phone'];
-                $_SESSION['password'] = $result['password'];
+                // $_SESSION['password'] = $result['password'];
                 header('location:../index.php');
             } else {
                 $_SESSION['message'] = 'Mot de passe incorrect';
@@ -93,6 +93,14 @@ class User extends Connection
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
+        return $result;
+    }
+    public function getUser()
+    {
+        $sql = "SELECT * FROM users wehre id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$this->id]);
+        $result = $stmt->fetch();
         return $result;
     }
 }

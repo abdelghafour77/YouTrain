@@ -1,8 +1,6 @@
 <?php
 
-
-
-
+session_start()
 ?>
 
 
@@ -14,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
+    <title>User Profil</title>
     <!-- parsley -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/doc/assets/docs.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/src/parsley.css">
@@ -28,56 +26,45 @@
 
 <body class="bol">
     <form action="controllers/userController.php" method="POST">
-        <div class="container col-lg-4 mt-4">
+        <div class="container col-4 mb-3 mt-3">
             <div class="card">
-                <img src="assets/img/user.png">
+                <img src="assets/img/user.png" class="img-fluid">
                 <div class="row">
-                    <h1 class="text-center">Edit Profil</h1>
-                    <input type="hidden" name="id" value="10">
-                    <div class="col-5 ms-5 mt-4 ps-3">
+                    <h1 class="text-center">Edit User Profil</h1>
+                    <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
+                    <div class="col-5 ms-4 mt-4 ps-md-3 ps-0">
                         <label>First Name</label>
-                        <input type="text" name="first_name" placeholder="first Name" class="form-control" id="first">
+                        <input type="text" name="first_name" placeholder="First Name" value="<?= $_SESSION['first_name'] ?>" class="form-control">
+                    </div>
+                    <div class="col-5 mt-4 ps-md-3">
+                        <label>Last Name</label>
+                        <input type="text" name="last_name" placeholder="Last Name" value="<?= $_SESSION['last_name'] ?>" class="form-control">
+                    </div>
+                    <div class="col-5 ms-4 mt-4 ps-md-3 ps-0">
+                        <label>Age</label>
+                        <input type="number" name="age" placeholder="Your age" value="<?= $_SESSION['age'] ?>" class="form-control">
                     </div>
                     <div class="col-5 mt-4">
-                        <label>last Name</label>
-                        <input type="text" name="last_name" placeholder="last Name" class="form-control" id="last">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="Email" value="<?= $_SESSION['email'] ?>" class="form-control">
                     </div>
-                    <div class="col-5 ms-5 mt-4 ps-3">
-                        <label>age</label>
-                        <input type="number" name="age" placeholder="your age" class="form-control" id="aga">
-                    </div>
-                    <div class="col-5 mt-4">
-                        <label>email</label>
-                        <input type="email" name="email" placeholder="email" class="form-control" id="mail">
-                    </div>
-                    <div class="col-5 ms-5 mt-4 ps-3">
-                        <label>phone</label>
-                        <input type="number" name="phone" placeholder="phone number" class="form-control" id="nmra">
+                    <div class="col-5 ms-4 mt-4 ps-md-3 ps-0">
+                        <label>Phone</label>
+                        <input type="text" name="phone" placeholder="Phone number" value="<?= $_SESSION['phone'] ?>" class="form-control">
                     </div>
                     <div class="col-5 mt-4 mb-3">
-                        <label>password</label>
-                        <input type="password" name="password" placeholder="new password" class="form-control" id="psw">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="New password" class="form-control">
                     </div>
-                    <div class="botonat">
-                        <button type="submit" name="cancel" class="btn btn-danger me-2" id="cancel">cancel</a>
-                            <button type="submit" name="updateUser" class="btn btn-primary me-2" id="save">Save</button>
+                    <div class="botonat d-flex flex-row-reverse">
+                        <button type="submit" name="updateUser" class="btn btn-primary me-2 mb-2" id="save">Save</button>
+                        <button type="submit" name="delete" class="btn btn-danger me-2 mb-2" id="delete">Delete</a>
+
                     </div>
                 </div>
             </div>
         </div>
     </form>
 </body>
-<!-- <script>
-    function updateuser() {
-        // document.getElementById('task-id').value = id;
-        document.getElementById('first').value = document.getElementById(id).setAttribute('Fname');
-        document.getElementById('last').value = document.getElementById(id).setAttribute('Lname');
-        document.getElementById('aga').value = document.getElementById(id).setAttribute('age');
-        document.getElementById('mail').value = document.getElementById(id).setAttribute('email');
-        document.getElementById('nmra').value = document.getElementById(id).setAttribute('phone');
-        document.getElementById('psw').value = document.getElementById(id).setAttribute('Npass');
-
-    }
-</script> -->
 
 </html>
