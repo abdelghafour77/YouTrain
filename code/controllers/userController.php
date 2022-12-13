@@ -12,19 +12,20 @@ if (isset($_POST['login'])) {
     $user = new User($email, $password);
     $user->login();
 }
-if (isset($_POST['updateUser'])) {
-    extract($_POST);
-    if ($password == '') {
-        $user = (new User())->getUser();
-        $password = $user['password'];
-        var_dump($user);
-        // die;
-    }
-    $user = new User($email, $password, $first_name, $last_name, $phone, $age, $id);
-    // var_dump($user);
-    // die;
-    $user->updateUser();
-}
+// if (isset($_POST['updateUser'])) {
+//     extract($_POST);
+//     if ($password == '') {
+//         $user = (new User)->setId($_SESSION['id']);
+//         $user = $user->getUser();
+//         $password = $user['password'];
+//         var_dump($user);
+//         // die;
+//     }
+//     $user = new User($email, $password, $first_name, $last_name, $phone, $age, $id);
+//     // var_dump($user);
+//     // die;
+//     $user->updateUser();
+// }
 if (isset($_POST['delete'])) {
     $user = new User();
     $user->setId($_SESSION['id']);

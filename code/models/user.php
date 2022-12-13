@@ -1,6 +1,6 @@
 <?php
 require 'connection.php';
-// session_start();
+session_start();
 
 class User extends Connection
 {
@@ -99,10 +99,10 @@ class User extends Connection
     {
         $sql = "SELECT * FROM users where id = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$_SESSION['id']]);
+        $stmt->execute([$this->id]);
 
         $result = $stmt->fetch();
-        // var_dump($_SESSION);
+        var_dump($this);
         return $result;
     }
     public function deleteUser()
