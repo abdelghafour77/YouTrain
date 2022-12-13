@@ -295,7 +295,6 @@
 <!-- Footer -->
 
 
-</footer>
 <script type="text/javascript" src="actions.js"></script>
 
 <link rel="stylesheet" href="assets/css/home.css">
