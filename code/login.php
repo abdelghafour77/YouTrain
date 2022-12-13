@@ -1,3 +1,7 @@
+<?php
+require_once 'include/role.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
