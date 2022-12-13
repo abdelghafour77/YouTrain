@@ -25,3 +25,9 @@ if (isset($_POST['updateUser'])) {
     // die;
     $user->updateUser();
 }
+if (isset($_POST['delete'])) {
+    $user = new User();
+    $user->setId($_SESSION['id']);
+    $user->deleteUser();
+    header('location:../index.php');
+}

@@ -105,4 +105,15 @@ class User extends Connection
         // var_dump($_SESSION);
         return $result;
     }
+    public function deleteUser()
+    {
+        $dele = "DELETE FROM users WHERE id = ?";
+        $stmt = $this->connect()->prepare($dele);
+        $stmt->execute([$this->id]);
+        session_destroy();
+    }
+    function setId($id)
+    {
+        $this->id = $id;
+    }
 }
