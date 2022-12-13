@@ -1,5 +1,7 @@
 <?php
-session_start();
+
+require_once dirname(__DIR__) . '/include/session.php';
+
 class Connection
 {
       private $serv = 'localhost';

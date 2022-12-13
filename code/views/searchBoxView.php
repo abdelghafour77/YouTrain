@@ -9,8 +9,8 @@ $trainTypes = (new TrainType())->allTrainType();
     <div class="row row-search">
       <div class="col-md-11 mx-auto col-md-offset-1">
         <div class="booking-form">
-          <form method="get" action="">
-            <h1 class="title">Search</h1>
+          <form method="get" action="search.php" id="search-form">
+            <h1 class="title-search">Search</h1>
             <div class="row row-search">
               <div class="col-md-6">
                 <div class="form-group">
@@ -84,6 +84,9 @@ $trainTypes = (new TrainType())->allTrainType();
             </div>
             <div class="form-btn">
               <input type="submit" class="submit-btn" name="searching" value="Show travels">
+            </div>
+            <div class="form-btn">
+              <input type="button" class="cancel-btn" onclick="document.getElementById('search-form').reset()" value="clean">
             </div>
           </form>
         </div>

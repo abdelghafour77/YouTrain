@@ -1,5 +1,5 @@
 <?php
-    require_once 'include/dash-admin.php';
+require_once 'include/dash-admin.php';
 ?>
 <nav class="navbar navbar-expand-lg bg-light fixed-top">
     <div class="container-fluid">
@@ -58,7 +58,7 @@
                         <i class="bi bi-caret-down icon-nav fs-5 fw-bolder"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-light text-muted">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="edituser.php">Profile</a></li>
                         <li><a class="dropdown-item" href="#">My tickets</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li>

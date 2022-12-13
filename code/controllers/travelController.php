@@ -1,6 +1,6 @@
 <?php
 
-include 'models/travel.php';
+// include 'models/travel.php';
 include_once '../models/travel.php';
 
 if (isset($_POST['searching'])) searching();
@@ -37,4 +37,3 @@ if (isset($_POST['update'])) {
     $travel->updateTravel();
     header('location:../travels.php');
 }
-

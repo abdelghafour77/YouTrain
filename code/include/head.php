@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once dirname(__DIR__) . '/include/session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

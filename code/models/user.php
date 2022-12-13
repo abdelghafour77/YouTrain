@@ -1,6 +1,6 @@
 <?php
 require 'connection.php';
-session_start();
+// session_start();
 
 class User extends Connection
 {
