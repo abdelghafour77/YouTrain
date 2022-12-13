@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once 'include/session.php';
 // var_dump($_SESSION);
 // header('location: index.php');
 // die;

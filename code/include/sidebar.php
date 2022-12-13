@@ -1,7 +1,7 @@
 <div class="offcanvas offcanvas-start sidebar-nav bg-dark text-white" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
         <div class="offcanvas-title mt-3" id="offcanvasExampleLabel">
-            <a class="d-none d-lg-block" href="#">
+            <a class="d-none d-lg-block" href="index.php">
                 <img src="assets/img/logo.webp" class="img-fluid ps-3" alt="Bootstrap" width="180" height="40">
             </a>
         </div>

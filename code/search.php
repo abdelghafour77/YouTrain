@@ -1,5 +1,7 @@
 <?php
-session_start();
+
+require_once 'include/session.php';
+
 require 'models/travel.php';
 if (isset($_GET['searching']) && isset($_GET['d_station']) && isset($_GET['a_station']) && isset($_GET['date_d']) && isset($_GET['train_type']) && isset($_GET['nbr_adults']) && isset($_GET['nbr_kids'])) {
   $travels = searching();
