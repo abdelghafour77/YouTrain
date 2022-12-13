@@ -1,3 +1,6 @@
+<?php
+    require_once 'include/dash-admin.php';
+?>
 <nav class="navbar navbar-expand-lg bg-light fixed-top">
     <div class="container-fluid">
         <!-- offcanvas trigger -->
@@ -51,8 +54,8 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link text-white fw-bold ms-2 mb-0 mt-0 pb-0 pt-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-person-circle icon-nav fs-4 fw-bolder"> <span class="fs-6 text-dark mb-3"><?= $_SESSION['first_name'] . " " . $_SESSION['last_name']  ?></span></i>
-                        <i class="bi bi-caret-down icon-nav fs-5 mt-3 fw-bolder"></i>
+                        <i class="bi bi-person-circle icon-nav fs-4 fw-bolder"> <span class="fs-6 fw-bold"><?= $_SESSION['first_name'] . " " . $_SESSION['last_name']  ?></span></i>
+                        <i class="bi bi-caret-down icon-nav fs-5 fw-bolder"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-light text-muted">
                         <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -61,7 +64,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <form action="scripts.php" method="POST">
+                        <form action="logout.php" method="POST">
                             <li><button class="dropdown-item" type="submit" name="logout">Log Out</button></li>
                         </form>
                     </ul>

@@ -25,11 +25,11 @@ body {
     padding: 23px;
     text-align: center;
     width: 534px;
-    background: rgba(54, 125, 184, 0.5);
-    box-shadow: 12px 12px 22px;
+    background: rgb(46, 46, 46);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.form-style form h3 {
+.form-style form h2 {
     font-size: 30px;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -52,12 +52,15 @@ body {
 .form-style form .form-btn {
     background: white;
     color: blueviolet;
-    text-transform: capitalize;
+    width: 488px !important;
+    height: 47px ! important;
+    border-radius: 5px;
+    /* text-transform: capitalize; */
 }
 
 .form-style form .form-btn:hover {
-    background: blue;
-    color: white;
+    background: #5497fa;
+    color: #f3f5f9;
 }
 
 .form-style small {
@@ -83,7 +86,7 @@ body {
     color: rgb(26, 26, 188);
 }
 
-img {
+.img-user {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -149,7 +152,7 @@ img {
 
 .icon-nav,
 .text-icon {
-    color: #0d6efd;
+    color: #5497fa;
 }
 
 .img-gif {

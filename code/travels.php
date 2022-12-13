@@ -19,7 +19,7 @@
                 <span class="me-2"><i class="bi bi-calendar2-check"></i></span>
                 <span>Travels</span>
             </div>
-            <a href="#modal-city" data-bs-toggle="modal" class="btn btn-dark me-4 mt-2" onclick="addCity()"><i class="bi bi-plus-lg me-2"></i> Add Train</a>
+            <a href="#modal-city" data-bs-toggle="modal" class="btn btn-dark me-4 mt-2" onclick="addCity()"><i class="bi bi-plus-lg me-2"></i> Add Travel</a>
         </div>
         <?php
         require 'views/allTravels.php';
