@@ -20,7 +20,7 @@
             <input type="email" name="email" placeholder="email" required data-parsley-trigger="keyup">
             <input type="password" name="password" placeholder="password" required data-parsley-trigger="keyup">
             <input type="submit" name="login" value="login" class="form-btn">
-            <h3 class="fs-5 text-light">don't you have an account?<a class="text-decoration-none fs-5 text-danger" href="signup.php">regist now</a></h3>
+            <p class="fs-5 text-light">don't you have an account?<a class="text-decoration-none fs-5 text-danger" href="signup.php">regist now</a></p>
         </form>
     </div>
 </body>
