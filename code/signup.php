@@ -15,7 +15,7 @@
     </style>
     <div class="form-style mx-auto py-4">
         <form action="./controllers/userController.php" method="POST" id="form" data-parsley-validate>
-            <img src="assets/img/logo.webp" class="img-fluid ps-3 mb-3" alt="Bootstrap" width="180" height="40">
+            <img src="assets/img/logo.webp" class="img-fluid me-2 mb-3" alt="Bootstrap" width="180" height="40">
             <h2 class="text-white">Create an account</h2>
             <input type="text" name="first_name" placeholder="First Name" required data-parsley-minlength="3" data-parsley-trigger="keyup">
             <input type="text" name="last_name" placeholder="Last Name" required data-parsley-minlength="3" data-parsley-trigger="keyup">
