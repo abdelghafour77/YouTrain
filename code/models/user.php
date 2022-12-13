@@ -1,6 +1,6 @@
 <?php
 require 'connection.php';
-// session_start();
+session_start();
 
 class User extends Connection
 {
@@ -13,7 +13,7 @@ class User extends Connection
     public $password;
 
 
-    function __construct($email = null, $password = null, $first_name = null, $last_name = null, $phone = null, $age = null, $id = null)
+    function __construct($email = null, $password = null, $first_name = null, $last_name = null, $phone = null, $age = null, $id = null, $admin = null)
 
     {
         $this->first_name = $first_name;
@@ -23,6 +23,7 @@ class User extends Connection
         $this->age = $age;
         $this->phone = $phone;
         $this->id = $id;
+        $this->admin = $admin;
     }
 
 
@@ -57,7 +58,7 @@ class User extends Connection
                 $_SESSION['age'] = $result['age'];
                 $_SESSION['email'] = $result['email'];
                 $_SESSION['phone'] = $result['phone'];
-                // $_SESSION['password'] = $result['password'];
+                $_SESSION['admin'] = $result['admin'];
                 header('location:../index.php');
             } else {
                 $_SESSION['message'] = 'Mot de passe incorrect';
@@ -76,10 +77,16 @@ class User extends Connection
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['phone'] = $_POST['phone'];
         $_SESSION['password'] = $_POST['password'];
+        if (isset($_POST['admin'])) {
 
-        $upd = "UPDATE `users` SET `first_name`= ? ,`last_name`= ? ,`age`= ? ,`email`= ? ,`phone`= ? ,`password`= ?  WHERE `id` = ?";
-        $stmt = $this->connect()->prepare($upd);
-        $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $this->id]);
+            $upd = "UPDATE `users` SET `first_name`= ? ,`last_name`= ? ,`age`= ? ,`email`= ? ,`phone`= ? ,`password`= ? ,`admin`=?  WHERE `id` = ?";
+            $stmt = $this->connect()->prepare($upd);
+            $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $this->admin, $this->id]);
+        } else {
+            $upd = "UPDATE `users` SET `first_name`= ? ,`last_name`= ? ,`age`= ? ,`email`= ? ,`phone`= ? ,`password`= ?  WHERE `id` = ?";
+            $stmt = $this->connect()->prepare($upd);
+            $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $this->id]);
+        }
         // var_dump($this);
         // die;
         header('location:../edituser.php');
@@ -99,10 +106,10 @@ class User extends Connection
     {
         $sql = "SELECT * FROM users where id = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$_SESSION['id']]);
+        $stmt->execute([$this->id]);
 
         $result = $stmt->fetch();
-        // var_dump($_SESSION);
+        // var_dump($this);
         return $result;
     }
     public function deleteUser()
