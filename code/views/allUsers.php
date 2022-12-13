@@ -31,7 +31,7 @@ $users = $all_users->allUsers();
                 </td>
                 <td>
                     <div class="d-flex fs-3">
-                        <a href="" class="btn btn-warning me-3"><i class="bi bi-pencil-square users-icon mr"></i> Edit Profil</a>
+                        <a href="edituser.php?iduser=<?= $user['id'] ?>" class="btn btn-warning me-3"><i class="bi bi-pencil-square users-icon mr"></i> Edit Profil</a>
                     </div>
                 </td>
             </tr>

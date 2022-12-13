@@ -14,13 +14,19 @@ if (isset($_POST['login'])) {
 }
 if (isset($_POST['updateUser'])) {
     extract($_POST);
+
+    $id = $_POST['id'];
+
     if ($password == '') {
-        $user = (new User())->getUser();
+        $user = new User;
+        $user->setId($id);
+        $user = $user->getUser();
         $password = $user['password'];
         var_dump($user);
         // die;
     }
-    $user = new User($email, $password, $first_name, $last_name, $phone, $age, $id);
+
+    $user = new User($email, $password, $first_name, $last_name, $phone, $age, $id, $admin);
     // var_dump($user);
     // die;
     $user->updateUser();
