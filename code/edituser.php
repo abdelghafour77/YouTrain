@@ -47,7 +47,7 @@ if (isset($_GET['iduser'])) {
     <form action="controllers/userController.php" method="POST">
         <div class="container col-4 mb-3 mt-3">
 
-            <div class="card-edit">
+            <div class="card card-edit">
                 <img src="assets/img/user.png" class="img-user img-fluid">
 
                 <div class="row">
@@ -93,6 +93,7 @@ if (isset($_GET['iduser'])) {
                         <button type="submit" name="delete" class="btn btn-danger me-2 mb-2" id="delete">Delete</a>
 
                     </div>
+
                 </div>
             </div>
         </div>
