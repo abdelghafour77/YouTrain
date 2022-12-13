@@ -1,5 +1,5 @@
 <?php
-require_once 'include/dash-admin.php';
+    require_once 'include/dash-admin.php';
 ?>
 <nav class="navbar navbar-expand-lg bg-light fixed-top">
     <div class="container-fluid">

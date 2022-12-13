@@ -19,7 +19,7 @@
                 <div class="card first-cards card-bg">
                     <div class="row row-cols-2">
                         <div class="col card-body">
-                            <h5 class="card-title">Welcome Back</h5>
+                            <h5 class="card-title1 text-light fs-2">Welcome Back</h5>
                             <p class="card-text">Have a nice day at work.</p>
                         </div>
                         <div class="col">
