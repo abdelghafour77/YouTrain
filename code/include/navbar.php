@@ -14,14 +14,14 @@
             <div class="collapse navbar-collapse mt-0" id="navbarSupportedContent">
                 <ul class="navbar-nav d-flex ms-auto mt-3">
                     <li class="nav-item">
-                        <form class="d-flex ms-auto" role="search">
+                        <!-- <form class="d-flex ms-auto" role="search">
                             <div class="input-group search-navbar me-3 pe-5">
                                 <input type="text" class="form-control rounded-pill" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
                                 <button class="btn btn-outline-primary text-white rounded-pill ms-1 search-btn" type="button" id="button-addon2">
                                     <i class="bi bi-search text-dark"></i>
                                 </button>
                             </div>
-                        </form>
+                        </form> -->
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link text-white fw-bold ms-2 mb-0 mt-0 pb-0 pt-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

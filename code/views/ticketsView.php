@@ -12,7 +12,7 @@ foreach ($travels as $travel) {
   $start_time = $date->format('h:i A');
 
 ?>
-  <article class="card fl-left">
+  <article class="card view-card fl-left">
     <section class="date">
       <time datetime="23th feb"> <span><?= $day ?></span><span><?= $month ?></span> </time>
     </section>

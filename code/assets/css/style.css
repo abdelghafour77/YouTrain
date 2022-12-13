@@ -344,12 +344,12 @@ nav {
 }
 
 
-.row {
+.row-search {
     padding: 0 .5rem;
     overflow: hidden
 }
 
-.card {
+.view-card {
     display: table-row;
     background-color: #fff;
     color: #989898;
@@ -473,7 +473,7 @@ nav {
 }
 
 @media screen and (max-width:860px) {
-    .card {
+    .view-card{
         display: block;
         float: none;
         width: 100%;
