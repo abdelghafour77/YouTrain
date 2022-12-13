@@ -1,6 +1,6 @@
 <?php
 
-// require_once 'include/session.php';
+require_once dirname(__DIR__) . '/include/session.php';
 
 class Connection
 {
