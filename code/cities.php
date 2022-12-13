@@ -30,7 +30,7 @@ include("include/head.php");
 	<div class="modal fade" id="modal-city">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="./controllers/cityController.php" method="POST" id="form-city">
+				<form action="./controllers/cityController.php" method="POST" id="form-city" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">Add new city</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -39,7 +39,7 @@ include("include/head.php");
 							<input  type="hidden" name="id" id="city-id">
 							<div class="mb-3">
 								<label class="form-label">Name</label>
-								<input type="text" class="form-control" name="name" id="city-name"/>
+								<input type="text" class="form-control" name="name" id="city-name" required data-parsley-minlength="2" data-parsley-trigger="keyup"/>
 							</div>
 					</div>
 					<div class="modal-footer">

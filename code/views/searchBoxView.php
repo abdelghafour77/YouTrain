@@ -6,12 +6,12 @@ $trainTypes = (new TrainType())->allTrainType();
 ?>
 <section id="search">
   <div class="container">
-    <div class="row">
+    <div class="row row-search">
       <div class="col-md-11 mx-auto col-md-offset-1">
         <div class="booking-form">
           <form method="get" action="">
             <h1 class="title">Search</h1>
-            <div class="row">
+            <div class="row row-search">
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Departure station</span>
@@ -37,7 +37,7 @@ $trainTypes = (new TrainType())->allTrainType();
                 </div>
               </div>
             </div>
-            <div class="row">
+            <div class="row row-search">
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Departing</span>
@@ -57,7 +57,7 @@ $trainTypes = (new TrainType())->allTrainType();
                 </div>
               </div>
             </div>
-            <div class="row">
+            <div class="row row-search">
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Adults (18+)</span>

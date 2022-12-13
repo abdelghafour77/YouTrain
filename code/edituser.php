@@ -46,8 +46,10 @@ if (isset($_GET['iduser'])) {
 <body class="bol">
     <form action="controllers/userController.php" method="POST">
         <div class="container col-4 mb-3 mt-3">
-            <div class="card">
-                <img src="assets/img/user.png" class="img-fluid">
+
+            <div class="card-edit">
+                <img src="assets/img/user.png" class="img-user img-fluid">
+
                 <div class="row">
                     <h1 class="text-center">Edit User Profil</h1>
                     <input type="hidden" name="id" value="<?= $user['id'] ?>">

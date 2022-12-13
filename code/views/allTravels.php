@@ -24,8 +24,8 @@ $travels = $all_travels->allTravels();
             date = "<?= $travel['date_start']; ?>" train = "<?= $travel['train_id']; ?>">
                 <td class=""><?= $travel["time"] ?></td>
                 <td class=""><?= $travel["price"] ?></td>
-                <td class=""><?= $travel["station"] ?></td>
-                <td class=""><?= $travel["end_station_id"] ?></td>
+                <td class=""><?= $travel["station_start"] ?></td>
+                <td class=""><?= $travel["station_end"] ?></td>
                 <td class=""><?= $travel["date_start"] ?></td>
                 <td class=""><?= $travel["train"] ?></td>
                 <td>

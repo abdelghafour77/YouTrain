@@ -19,9 +19,6 @@
                 <span class="me-2"><i class="bi bi-ticket-detailed-fill"></i></span>
                 <span>E-tickets</span>
             </div>
-            <form action="./controllers/ticketController.php" method="POST">
-                <a href="" name="order" class="btn btn-dark me-4 mt-2"><i class="bi bi-plus-lg me-2"></i> Order By Last Added</a>
-            </form>
         </div>
         <?php
         require 'views/allTickets.php';
