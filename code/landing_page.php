@@ -11,7 +11,7 @@
 <nav class="navbar fixed-top navbar-light bg-light">
   <div class="container-fluid">
     <span>
-   <span><a class="" href="#" style="color:black;"><img class="nav-item-icon" src="assets/train.svg" width="30" height="30" alt="navIcon"></span></a>
+   <span><a class="" href="#" style="color:black;"><img class="nav-item-icon" src="assets/img/train.svg" width="30" height="30" alt="navIcon"></span></a>
         <a class="navbar-brand"  href="#" style="color:black;">YOUTRAIN</a> 
     </span>
 
@@ -82,7 +82,7 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="assets/train1.jpg" class="d-block w-100" alt="..."  style="width: 300px; height: 337px; object-fit: cover;">
+      <img src="assets/img/train1.jpg" class="d-block w-100" alt="..."  style="width: 300px; height: 337px; object-fit: cover;">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
@@ -97,7 +97,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="assets/train3.jpg" class="d-block w-100" alt="..."  style="width: 300px; height: 337px; object-fit: cover;">
+      <img src="assets/img/train3.jpg" class="d-block w-100" alt="..."  style="width: 300px; height: 337px; object-fit: cover;">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
@@ -298,7 +298,7 @@
 </footer>
 <script type="text/javascript" src="actions.js"></script>
 
-<link rel="stylesheet" href="assets/home.css">
+<link rel="stylesheet" href="assets/css/home.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 

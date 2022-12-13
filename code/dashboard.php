@@ -1,16 +1,20 @@
 <?php
-    $title = "Dashboard | Trainpal";
-    include("include/head.php");
+$title = "Dashboard | Trainpal";
+include("include/head.php");
+include("models/statistics.php");
+$dash_statistics = new Statistics;
+
 ?>
+
 <body class="bg-light">
     <!-- Begin navbar -->
-    <?php 
-        include("include/navbar.php");
+    <?php
+    include("include/navbar.php");
     ?>
     <!-- END navbar -->
     <!-- BEGIN Offcanvas -->
-    <?php 
-        include("include/sidebar.php");
+    <?php
+    include("include/sidebar.php");
     ?>
     <!-- END Offcanvas -->
     <main>
@@ -36,7 +40,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-4">
             <div class="col mb-3">
@@ -45,7 +49,7 @@
                         <div><i class="col bi bi-signpost-2 fs-3 text-dark text-center ms-5"></i></div>
                         <div class="col text-truncate">
                             <h5 class="card-title">Total Stations</h5>
-                            <p class="card-text fs-5">Stations</p>
+                            <p class="card-text fs-5"><?php echo ($dash_statistics->statistics_count('stations')['COUNT(*)']); ?>Stations</p>
                         </div>
                     </div>
                 </div>
@@ -56,7 +60,7 @@
                         <div><i class="col bi bi-people fs-3 text-dark text-center me-1 ms-5"></i></div>
                         <div class="col text-truncate">
                             <h5 class="card-title">Total Customers</h5>
-                            <p class="card-text fs-5">Customers</p>
+                            <p class="card-text fs-5"><?php $dash_statistics->statistics_count('users'); ?>Customers</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +71,9 @@
                         <div><i class="col bi bi-train-front-fill fs-3 text-dark text-center ms-5"></i></div>
                         <div class="col text-truncate">
                             <h5 class="card-title">Total Trains</h5>
-                            <p class="card-text fs-5">Trains</p>
+
+                            <p class="card-text fs-5"><?php $dash_statistics->statistics_count('trains')['COUNT(*)']; ?>Trains</p>
+
                         </div>
                     </div>
                 </div>
@@ -110,5 +116,5 @@
 
     <!-- ================== BEGIN core-js ================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-	<!-- ================== END core-js ================== -->
+    <!-- ================== END core-js ================== -->
 </body>
