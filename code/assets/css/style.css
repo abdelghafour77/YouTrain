@@ -83,7 +83,7 @@ body {
     color: rgb(26, 26, 188);
 }
 
-img {
+.img-user {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -149,7 +149,7 @@ img {
 
 .icon-nav,
 .text-icon {
-    color: #0d6efd;
+    color: #5497fa;
 }
 
 .img-gif {

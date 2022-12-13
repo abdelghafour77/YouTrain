@@ -6,7 +6,7 @@ $cities = $all_cities->allCities();
 <div class="modal fade" id="modal-city">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form action="./controllers/stationController.php" method="POST" id="form-city">
+				<form action="./controllers/stationController.php" method="POST" id="form-city" data-parsley-validate>
 					<div class="modal-header">
 						<h5 class="modal-title">Add new station</h5>
 						<a href="#" class="btn-close" data-bs-dismiss="modal"></a>
@@ -15,19 +15,19 @@ $cities = $all_cities->allCities();
 							<input  type="hidden" name="id" id="station-id">
 							<div class="mb-3">
 								<label class="form-label">Name</label>
-								<input type="text" class="form-control" name="name" id="station-name"/>
+								<input type="text" class="form-control" name="name" id="station-name" required data-parsley-minlength="3" data-parsley-trigger="keyup"/>
 							</div>
                             <div class="mb-3">
 								<label class="form-label">Address</label>
-								<input type="text" class="form-control" name="address" id="station-address"/>
+								<input type="text" class="form-control" name="address" id="station-address" required data-parsley-minlength="3" data-parsley-trigger="keyup"/>
 							</div>
                             <div class="mb-3">
 								<label class="form-label">Capacity</label>
-								<input type="number" class="form-control" name="capacity" id="station-capacity"/>
+								<input type="number" class="form-control" name="capacity" id="station-capacity" required data-parsley-trigger="keyup"/>
 							</div>
                             <div class="mb-3">
 								<label class="form-label">City</label>
-								<select class="form-select" name="city" id="station-city">
+								<select class="form-select" name="city" id="station-city" required data-parsley-trigger="keyup">
 									<option value="">Please select</option>
                                     <?php
                                         foreach ($cities as $city) {
