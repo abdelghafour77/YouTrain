@@ -97,10 +97,23 @@ class User extends Connection
     }
     public function getUser()
     {
-        $sql = "SELECT * FROM users wehre id = ?";
+        $sql = "SELECT * FROM users where id = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$this->id]);
+        $stmt->execute([$_SESSION['id']]);
+
         $result = $stmt->fetch();
+        // var_dump($_SESSION);
         return $result;
+    }
+    public function deleteUser()
+    {
+        $dele = "DELETE FROM users WHERE id = ?";
+        $stmt = $this->connect()->prepare($dele);
+        $stmt->execute([$this->id]);
+        session_destroy();
+    }
+    function setId($id)
+    {
+        $this->id = $id;
     }
 }

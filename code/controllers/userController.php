@@ -16,10 +16,18 @@ if (isset($_POST['updateUser'])) {
     extract($_POST);
     if ($password == '') {
         $user = (new User())->getUser();
-        $password = $user->password;
+        $password = $user['password'];
+        var_dump($user);
+        // die;
     }
     $user = new User($email, $password, $first_name, $last_name, $phone, $age, $id);
     // var_dump($user);
     // die;
     $user->updateUser();
+}
+if (isset($_POST['delete'])) {
+    $user = new User();
+    $user->setId($_SESSION['id']);
+    $user->deleteUser();
+    header('location:../index.php');
 }
