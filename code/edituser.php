@@ -5,16 +5,21 @@ if (isset($_GET['iduser'])) {
     $obj = new User();
     $obj->setId($_GET['iduser']);
     $user = $obj->getUser();
+    $admin = $user['admin'];
+
     // var_dump($user);
     // die;
 } else {
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
     $obj = new User();
     $obj->setId($_SESSION['id']);
     $user = $obj->getUser();
     // var_dump($user);
     // die;
 }
+// var_dump($user);
+// die;
+
 ?>
 
 
@@ -41,35 +46,46 @@ if (isset($_GET['iduser'])) {
 <body class="bol">
     <form action="controllers/userController.php" method="POST">
         <div class="container col-4 mb-3 mt-3">
-            <div class="card-edit">
+            <div class="card">
                 <img src="assets/img/user.png" class="img-fluid">
                 <div class="row">
                     <h1 class="text-center">Edit User Profil</h1>
-                    <input type="hidden" name="id" value="<?= $_SESSION['id'] ?>">
+                    <input type="hidden" name="id" value="<?= $user['id'] ?>">
                     <div class="col-5 ms-4 mt-4 ps-md-3 ps-0">
                         <label>First Name</label>
-                        <input type="text" name="first_name" placeholder="First Name" value="<?= $_SESSION['first_name'] ?>" class="form-control">
+                        <input type="text" name="first_name" placeholder="First Name" value="<?= $user['first_name'] ?>" class="form-control">
                     </div>
                     <div class="col-5 mt-4 ps-md-3">
                         <label>Last Name</label>
-                        <input type="text" name="last_name" placeholder="Last Name" value="<?= $_SESSION['last_name'] ?>" class="form-control">
+                        <input type="text" name="last_name" placeholder="Last Name" value="<?= $user['last_name'] ?>" class="form-control">
                     </div>
                     <div class="col-5 ms-4 mt-4 ps-md-3 ps-0">
                         <label>Age</label>
-                        <input type="number" name="age" placeholder="Your age" value="<?= $_SESSION['age'] ?>" class="form-control">
+                        <input type="number" name="age" placeholder="Your age" value="<?= $user['age'] ?>" class="form-control">
                     </div>
                     <div class="col-5 mt-4">
                         <label>Email</label>
-                        <input type="email" name="email" placeholder="Email" value="<?= $_SESSION['email'] ?>" class="form-control">
+                        <input type="email" name="email" placeholder="Email" value="<?= $user['email'] ?>" class="form-control">
                     </div>
                     <div class="col-5 ms-4 mt-4 ps-md-3 ps-0">
                         <label>Phone</label>
-                        <input type="text" name="phone" placeholder="Phone number" value="<?= $_SESSION['phone'] ?>" class="form-control">
+                        <input type="number" name="phone" placeholder="Phone number" value="<?= $user['phone'] ?>" class="form-control">
                     </div>
                     <div class="col-5 mt-4 mb-3">
                         <label>Password</label>
                         <input type="password" name="password" placeholder="New password" class="form-control">
                     </div>
+                    <?php
+                    if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) { ?>
+                        <div class="col-5 ms-4 mt-4 ps-md-3 ps-0">
+                            <label>Role</label>
+                            <select name="admin" id="" class="form-control">
+                                <option value="0" <?= ($user['admin'] == '0') ? 'selected' : '' ?>>User</option>
+                                <option value="1" <?= ($user['admin'] == '1') ? 'selected' : '' ?>>Admin</option>
+                            </select>
+
+                        </div>
+                    <?php } ?>
                     <div class="botonat d-flex flex-row-reverse">
                         <button type="submit" name="updateUser" class="btn btn-primary me-2 mb-2" id="save">Save</button>
                         <button type="submit" name="delete" class="btn btn-danger me-2 mb-2" id="delete">Delete</a>
