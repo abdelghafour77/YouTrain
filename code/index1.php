@@ -34,7 +34,7 @@ unset($_SESSION['search']);
 
       <?php require_once 'include/navbar-user.php'; ?>
       <?php require_once 'views/searchBoxView.php'; ?>
-      <main class="page-content">
+      <!-- <main class="page-content">
             <div class="card">
                   <div class="content">
                         <h2 class="title">Mountain View</h2>
@@ -59,7 +59,7 @@ unset($_SESSION['search']);
 
                   </div>
             </div>
-      </main>
+      </main> -->
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 

@@ -1,7 +1,7 @@
 <?php
-require_once 'include/role.php';
 $title = "TrainPal | Sign Up page";
 include("include/head.php");
+require_once 'include/role.php';
 ?>
 
 <body>
