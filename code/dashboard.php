@@ -18,9 +18,9 @@
             <div class="col-12 col-md-8">
                 <div class="card first-cards card-bg">
                     <div class="row">
-                        <div class="col-12 col-sm-6 card-body fw-bold">
+                        <div class="col-12 col-sm-6 card-body">
                             <h5 class="card-title1 text-light text-center fs-2 mt-4 pt-2 mb-2">Welcome Back</h5>
-                            <p class="text-dark text-center fs-4 mb-2"><?= $_SESSION['first_name'] . " " . $_SESSION['last_name']  ?></p>
+                            <p class="card-title2 text-center fs-4 mb-2"><?= $_SESSION['first_name'] . " " . $_SESSION['last_name']  ?></p>
                             <p class="card-text text-center text-light fs-4">Have a nice day at work!</p>
                         </div>
                         <div class="col-12 col-sm-6">
