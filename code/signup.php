@@ -1,7 +1,7 @@
 <?php
-    require_once 'include/role.php';
-    $title = "TrainPal | Sign Up page";
-    include("include/head.php");
+require_once 'include/role.php';
+$title = "TrainPal | Sign Up page";
+include("include/head.php");
 ?>
 
 <body>
@@ -27,7 +27,8 @@
                 <button type="submit" name="signup" class="form-btn text-black">Register Now</button>
             </div>
             <p class="fs-6 mt-2 text-light">Already have an account? <button class="btn btn-outline-danger btn-sm ms-1">
-                                        <a href="login.php" class="text-decoration-none text-white text-center">Login</a></button></p>
+                    <a href="login.php" class="text-decoration-none text-white text-center">Login</a></button></p>
         </form>
     </div>
+    <?php require_once 'include/alert.php'; ?>
 </body>

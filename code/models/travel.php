@@ -33,13 +33,13 @@ class Travel extends Connection
     public function allTravels()
     {
         $sql = "SELECT travels.*,
-                trains.name as train,
-                start_station.name as station_start,
-                end_station.name as station_end
-                from travels
-                inner join stations as start_station on start_station.id = travels.start_station_id
-                inner join stations as end_station on end_station.id = travels.end_station_id
-                inner join trains on trains.id = travels.train_id";
+        trains.name as train,
+        start_station.name as station_start,
+        end_station.name as station_end
+        from travels
+        inner join stations as start_station on start_station.id = travels.start_station_id
+        inner join stations as end_station on end_station.id = travels.end_station_id
+        inner join trains on trains.id = travels.train_id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();

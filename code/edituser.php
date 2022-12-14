@@ -98,6 +98,7 @@ if (isset($_GET['iduser'])) {
             </div>
         </div>
     </form>
+    <?php require_once 'include/alert.php'; ?>
 </body>
 
 </html>

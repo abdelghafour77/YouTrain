@@ -1,16 +1,17 @@
 <?php
-    $title = "Travels Details | Trainpal";
-    include("include/head.php");
+$title = "Travels Details | Trainpal";
+include("include/head.php");
 ?>
+
 <body class="bg-light">
     <!-- Begin navbar -->
-    <?php 
-        include("include/navbar.php");
+    <?php
+    include("include/navbar.php");
     ?>
     <!-- END navbar -->
     <!-- BEGIN Offcanvas -->
-    <?php 
-        include("include/sidebar.php");
+    <?php
+    include("include/sidebar.php");
     ?>
     <!-- END Offcanvas -->
     <main class="mb-4">
@@ -37,5 +38,6 @@
             });
         });
     </script>
+    <?php require_once 'include/alert.php'; ?>
     <script src="assets/js/main.js"></script>
 </body>

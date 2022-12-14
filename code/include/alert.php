@@ -1,9 +1,10 @@
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
   <?php if (isset($_SESSION['message'])) { ?>
     const Toast = Swal.mixin({
       width: '25em',
       toast: true,
-      position: 'top-end',
+      position: 'top',
       showConfirmButton: false,
       timer: 4000,
       timerProgressBar: false,
@@ -14,6 +15,7 @@
     })
 
     Toast.fire({
+
       icon: '<?= $_SESSION['type_message'] ?>',
       title: '<?= $_SESSION['message'] ?>'
     })

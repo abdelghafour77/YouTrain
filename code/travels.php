@@ -1,16 +1,17 @@
 <?php
-    $title = "Travels | Trainpal";
-    include("include/head.php");
+$title = "Travels | Trainpal";
+include("include/head.php");
 ?>
+
 <body class="bg-light">
     <!-- Begin navbar -->
-    <?php 
-        include("include/navbar.php");
+    <?php
+    include("include/navbar.php");
     ?>
     <!-- END navbar -->
     <!-- BEGIN Offcanvas -->
-    <?php 
-        include("include/sidebar.php");
+    <?php
+    include("include/sidebar.php");
     ?>
     <!-- END Offcanvas -->
     <main class="mb-4">
@@ -26,8 +27,8 @@
         ?>
     </main>
     <!-- Station MODAL -->
-	<?php
-        require 'views/modalTravel.php';
+    <?php
+    require 'views/modalTravel.php';
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
@@ -42,5 +43,6 @@
             });
         });
     </script>
+    <?php require_once 'include/alert.php'; ?>
     <script src="assets/js/main.js"></script>
 </body>

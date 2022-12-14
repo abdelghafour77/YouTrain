@@ -176,6 +176,7 @@ main {
 
 .first-cards {
     height: 240px !important;
+    background-color: #fdc93a !important;
 }
 
 .card-bg {
@@ -197,6 +198,11 @@ main {
 #data-table_wrapper {
     margin-right: 27px !important;
     margin-left: 10px !important;
+}
+
+.card-title1 {
+    /* color: rgb(243 233 217) !important; */
+    color: rgb(243 106 141) !important;
 }
 
 
