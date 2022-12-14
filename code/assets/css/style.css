@@ -199,6 +199,10 @@ main {
     margin-left: 10px !important;
 }
 
+.card-title1 {
+    margin-left: 150px !important;
+}
+
 
 @media (min-width: 992px) {
     .sidebar-nav {
