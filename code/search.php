@@ -63,7 +63,7 @@ function searching()
       </div>
     </div>
   </section>
-
+  <?php require_once 'include/alert.php'; ?>
 </body>
 
 </html>

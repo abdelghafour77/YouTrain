@@ -36,5 +36,6 @@ include("include/head.php");
          });
       });
    </script>
+   <?php require_once 'include/alert.php'; ?>
    <script src="assets/js/main.js"></script>
 </body>

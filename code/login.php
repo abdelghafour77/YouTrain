@@ -28,4 +28,5 @@
                                         <a href="signup.php" class="text-decoration-none text-white">Register here</a></button></p>
         </form>
     </div>
+    <?php require_once 'include/alert.php'; ?>
 </body>

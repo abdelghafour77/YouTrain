@@ -29,10 +29,23 @@ class User extends Connection
 
     public function registration()
     {
-        $ins = "INSERT INTO `users` (first_name,last_name,email,password)VALUES(?,?,?,?)";
-        $stmt = $this->connect()->prepare($ins);
-        $stmt->execute([$this->first_name, $this->last_name, $this->email, $this->password]);
-        header('location:../login.php');
+        $sql = "SELECT * FROM users WHERE email = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$this->email]);
+        $result = $stmt->fetch();
+
+        if ($result['id'] == '') {
+            $ins = "INSERT INTO `users` (first_name,last_name,email,password)VALUES(?,?,?,?)";
+            $stmt = $this->connect()->prepare($ins);
+            $stmt->execute([$this->first_name, $this->last_name, $this->email, $this->password]);
+            header('location:../login.php');
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = "Registration has been added successfully !";
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = "Email already exists!!";
+            header('location:../signup.php');
+        }
     }
 
 
@@ -45,6 +58,7 @@ class User extends Connection
         //var_dump($result);
         //die;
         if (!isset($result["password"])) {
+            $_SESSION['type_message'] = "error";
             $_SESSION['message'] = "Email incorrect";
             header('location: ../login.php');
         } else {
@@ -61,6 +75,7 @@ class User extends Connection
                 $_SESSION['admin'] = $result['admin'];
                 header('location:../index.php');
             } else {
+                $_SESSION['type_message'] = "error";
                 $_SESSION['message'] = 'Mot de passe incorrect';
                 header('location:../login.php');
             }
