@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : lun. 12 déc. 2022 à 09:57
--- Version du serveur : 10.4.24-MariaDB
--- Version de PHP : 7.4.29
+-- Host: 127.0.0.1:3306
+-- Generation Time: Dec 15, 2022 at 10:24 AM
+-- Server version: 8.0.27
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `youtrain`
+-- Database: `youtrain`
 --
 CREATE DATABASE IF NOT EXISTS `youtrain` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `youtrain`;
@@ -26,58 +26,63 @@ USE `youtrain`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `bookings`
+-- Table structure for table `bookings`
 --
 
-CREATE TABLE `bookings` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `travel_id` int(11) NOT NULL,
-  `nbr_adults` int(11) NOT NULL,
-  `nbr_kids` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `bookings`;
+CREATE TABLE IF NOT EXISTS `bookings` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `travel_id` int NOT NULL,
+  `nbr_adults` int NOT NULL,
+  `nbr_kids` int NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `bookings`
+-- Dumping data for table `bookings`
 --
 
 INSERT INTO `bookings` (`id`, `user_id`, `travel_id`, `nbr_adults`, `nbr_kids`, `created_at`, `updated_at`) VALUES
-(1, 1, 16, 20, 3, '2022-12-11 16:17:18', '0000-00-00 00:00:00'),
-(3, 1, 17, 11, 1, '2022-12-11 16:24:12', '0000-00-00 00:00:00');
+(1, 1, 1, 1, 0, '2022-12-09 08:48:43', '2022-12-09 08:48:43');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `card_payments`
+-- Table structure for table `card_payments`
 --
 
-CREATE TABLE `card_payments` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `card_payments`;
+CREATE TABLE IF NOT EXISTS `card_payments` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
   `card_number` varchar(17) NOT NULL,
   `full_name` varchar(80) NOT NULL,
   `card_type` varchar(20) NOT NULL,
-  `cvc` int(11) NOT NULL,
+  `cvc` int NOT NULL,
   `date_exp` varchar(10) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cities`
+-- Table structure for table `cities`
 --
 
-CREATE TABLE `cities` (
-  `id` int(11) NOT NULL,
-  `name` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `cities`;
+CREATE TABLE IF NOT EXISTS `cities` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=405 DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `cities`
+-- Dumping data for table `cities`
 --
 
 INSERT INTO `cities` (`id`, `name`) VALUES
@@ -474,236 +479,136 @@ INSERT INTO `cities` (`id`, `name`) VALUES
 (401, 'Awsard'),
 (402, 'Oued-Eddahab'),
 (403, 'Stehat'),
-(404, 'Aït Attab'),
-(406, 'g'),
-(407, 'ggg'),
-(408, 'ggg'),
-(409, 'ggg'),
-(410, 'kkk');
+(404, 'Aït Attab');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `stations`
+-- Table structure for table `stations`
 --
 
-CREATE TABLE `stations` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `stations`;
+CREATE TABLE IF NOT EXISTS `stations` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
   `address` text NOT NULL,
-  `capacity` int(11) NOT NULL,
-  `city_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `capacity` int NOT NULL,
+  `city_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `stations`
+-- Dumping data for table `stations`
 --
 
 INSERT INTO `stations` (`id`, `name`, `address`, `capacity`, `city_id`) VALUES
-(1, 'casa', 'Casa', 2000, 17),
-(20, 'Clio Ortiz', 'Enim magna reiciendi', 555, 342),
-(24, 'Dahlia Noble', 'Nesciunt voluptatem', 79, 3),
-(25, 'Gretche', 'Facilis dolor nihil ', 89, 230);
+(1, 'Youssoufia', ' R201, Youssoufia', 900, 75),
+(2, 'Marrakech', 'Centre Guéliz Gare ONCF Marrakech، 40100', 3200, 103);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `trains`
+-- Table structure for table `trains`
 --
 
-CREATE TABLE `trains` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `trains`;
+CREATE TABLE IF NOT EXISTS `trains` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
-  `capacity` int(11) NOT NULL,
-  `type_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `capacity` int NOT NULL,
+  `type_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `trains`
+-- Dumping data for table `trains`
 --
 
 INSERT INTO `trains` (`id`, `name`, `capacity`, `type_id`) VALUES
-(9, 'Bo Foley', 13, 3),
-(10, 'Brett Cortez', 66, 2),
-(11, 'Isabella Delgado', 61, 2);
+(1, 'N305', 270, 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `travels`
+-- Table structure for table `travels`
 --
 
-CREATE TABLE `travels` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `travels`;
+CREATE TABLE IF NOT EXISTS `travels` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `time` float NOT NULL,
   `price` float NOT NULL,
-  `seats` int(11) NOT NULL DEFAULT 0,
-  `start_station_id` int(11) NOT NULL,
-  `end_station_id` int(11) NOT NULL,
-  `date_start` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp(),
-  `created_by` int(11) NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `train_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `seat` int NOT NULL DEFAULT '0',
+  `start_station_id` int NOT NULL,
+  `end_station_id` int NOT NULL,
+  `date_start` timestamp NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL,
+  `created_by` int NOT NULL,
+  `updated_by` int NOT NULL,
+  `train_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `travels`
+-- Dumping data for table `travels`
 --
 
-INSERT INTO `travels` (`id`, `time`, `price`, `seats`, `start_station_id`, `end_station_id`, `date_start`, `created_at`, `updated_at`, `created_by`, `updated_by`, `train_id`) VALUES
-(14, 36, 233, 0, 1, 25, '2022-12-11 21:17:00', '2022-12-10 16:52:38', '0000-00-00 00:00:00', 0, 0, 11),
-(16, 36, 974, 0, 1, 20, '2012-09-10 20:29:00', '2022-12-11 13:33:44', '0000-00-00 00:00:00', 0, 0, 10),
-(17, 740, 500, 0, 25, 1, '2022-12-10 05:50:00', '2022-12-11 13:33:51', '0000-00-00 00:00:00', 0, 0, 10),
-(19, 84, 578, 0, 24, 24, '2022-12-12 06:56:00', '2022-12-12 08:38:43', '0000-00-00 00:00:00', 0, 0, 10);
+INSERT INTO `travels` (`id`, `time`, `price`, `seat`, `start_station_id`, `end_station_id`, `date_start`, `created_at`, `updated_at`, `created_by`, `updated_by`, `train_id`) VALUES
+(1, 3, 90, 700, 1, 2, '2022-12-09 10:12:05', '2022-12-08 10:12:05', '2022-12-08 10:12:05', 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `type_trains`
+-- Table structure for table `type_trains`
 --
 
-CREATE TABLE `type_trains` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `type_trains`;
+CREATE TABLE IF NOT EXISTS `type_trains` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-  `speed` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `speed` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `type_trains`
+-- Dumping data for table `type_trains`
 --
 
 INSERT INTO `type_trains` (`id`, `name`, `speed`) VALUES
-(1, 'Al Atlas', 360),
-(2, 'Al Boraq', 800),
-(3, 'ONCF', 330);
+(1, 'atlas', 130),
+(2, 'bouraq', 320);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `age` int(11) DEFAULT NULL,
+  `age` int DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(18) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `admin` int(11) NOT NULL DEFAULT 0,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_by` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `admin` int NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL,
+  `updated_by` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 
 --
--- Déchargement des données de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `age`, `email`, `phone`, `password`, `admin`, `created_at`, `updated_at`, `updated_by`) VALUES
-(1, 'boutaina', 'el atbaoui', 24, 'boutaina@gmail.com', '0687655434', '0', 1, '2022-12-08 15:17:59', '2022-12-08 15:17:59', '2022-12-08 15:17:59'),
-(2, 'abd', 'ghafur', 22, 'abd@gmail.com', '0687655435', 'fkkker', 0, '2022-12-11 16:15:33', '2022-12-11 16:15:33', '2022-12-11 16:15:33');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `bookings`
---
-ALTER TABLE `bookings`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `card_payments`
---
-ALTER TABLE `card_payments`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `cities`
---
-ALTER TABLE `cities`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `stations`
---
-ALTER TABLE `stations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `trains`
---
-ALTER TABLE `trains`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `travels`
---
-ALTER TABLE `travels`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `type_trains`
---
-ALTER TABLE `type_trains`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `card_payments`
---
-ALTER TABLE `card_payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `cities`
---
-ALTER TABLE `cities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=417;
-
---
--- AUTO_INCREMENT pour la table `stations`
---
-ALTER TABLE `stations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT pour la table `trains`
---
-ALTER TABLE `trains`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT pour la table `travels`
---
-ALTER TABLE `travels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT pour la table `type_trains`
---
-ALTER TABLE `type_trains`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT pour la table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+(1, 'said', 'Bailey', 0, 'nybisymi@mailinator.com', '', '$2y$10$7ZNruRGZkA43jzmPMZk4VOW6Ltuv/1TZ5NZgUTZFPPudmvOODkRyO', 1, '2022-12-15 08:38:42', '0000-00-00 00:00:00', 0),
+(3, 'Solomono', 'Ortiz', 18, 'pisyboceb@mailinator.com', '', '$2y$10$CpScmUcYOei5v30USHvDmO//bM4QTSaVdmKrG9sRfh/l2WMxS3HTO', 0, '2022-12-13 10:58:20', '0000-00-00 00:00:00', 0),
+(4, 'Justina', 'Copeland', 15, 'luxyw@mailinator.com', '', '$2y$10$EPjaoazFlckbN.gbJWCineUOMvuydresmEhT/.N.c4Jo3X.Cg7A1G', 0, '2022-12-13 10:58:26', '0000-00-00 00:00:00', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
