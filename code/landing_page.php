@@ -13,7 +13,7 @@
     <nav class="navbar fixed-top navbar-light bg-light">
       <div class="container-fluid">
         <span>
-          <span><a class="" href="#" style="color:black;"><img class="nav-item-icon" src="assets/train.svg" width="30" height="30" alt="navIcon"></span></a>
+          <span><a class="" href="#" style="color:black;"><img class="nav-item-icon" src="assets/img/train.svg" width="30" height="30" alt="navIcon"></span></a>
           <a class="navbar-brand" href="#" style="color:black;">YOUTRAIN</a>
         </span>
 
