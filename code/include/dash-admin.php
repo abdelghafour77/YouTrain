@@ -7,3 +7,7 @@ if (!isset($_SESSION['first_name'])) {
     // header('location: index.php');
     die;
 }
+if ($_SESSION['admin'] == 0) {
+    header('location: index.php');
+    die;
+}
