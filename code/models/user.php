@@ -104,7 +104,7 @@ class User extends Connection
         }
         // var_dump($this);
         // die;
-        header('location:../edituser.php');
+        header('location:../usersgi.php');
 
         die;
     }

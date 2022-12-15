@@ -24,8 +24,8 @@ $users = $all_users->allUsers();
             <tr>
                 <td class="sorting_1"><?= $user['first_name'] . " " . $user['last_name']  ?></td>
                 <td><?= $user['email'] ?></td>
-                <td><?= $user['phone'] ?></td>
-                <td><?= $user['age'] ?></td>
+                <td><?= ($user['phone'] == '') ? 'Null' : $user['phone'] ?></td>
+                <td><?= ($user['age'] == 0 || $user['age'] == '') ? 'Null' : $user['age'] ?></td>
                 <td>
                     <span class="badge text-bg-<?= ($user['admin'] == 0) ? 'primary' : 'success' ?> fs-6"><?= ($user['admin'] == 1) ? 'Admin' : 'User' ?></span>
                 </td>
