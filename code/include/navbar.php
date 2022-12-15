@@ -59,8 +59,8 @@ require_once 'include/dash-admin.php';
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-light text-muted">
                         <li><a class="dropdown-item" href="edituser.php">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">My tickets</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="history.php">My tickets</a></li>
+                        <!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
                         <li>
                             <hr class="dropdown-divider">
                         </li>
