@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
 $title = "Trains | Trainpal";
 include("include/head.php");
@@ -46,3 +48,5 @@ include("include/head.php");
     <?php require_once 'include/alert.php'; ?>
     <script src="assets/js/main.js"></script>
 </body>
+
+</html>

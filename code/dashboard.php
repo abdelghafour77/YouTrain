@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
 $title = "Dashboard | Trainpal";
 include("include/head.php");
@@ -49,3 +51,5 @@ include("include/head.php");
     <!-- ================== END core-js ================== -->
     <?php require_once 'include/alert.php'; ?>
 </body>
+
+</html>

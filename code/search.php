@@ -1,38 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
 <?php
-
 require_once dirname(__DIR__) . '/code/include/session.php';
 require 'models/travel.php';
-if (isset($_GET['searching']) && isset($_GET['d_station']) && isset($_GET['a_station']) && isset($_GET['date_d']) && isset($_GET['train_type']) && isset($_GET['nbr_adults']) && isset($_GET['nbr_kids'])) {
-  $travels = searching();
-} else {
-  // header('location: 404.php');
-  // die;
-}
-
-function searching()
-{
+if (isset($_GET['searching'])) {
+  $d_station = null;
+  $a_station = null;
+  $date_d = null;
+  $train_type = null;
+  $nbr_adults = null;
+  $nbr_kids = null;
   extract($_GET);
   $travel = new Travel();
-
-  return $travel->search($d_station, $a_station, $date_d, $train_type, $nbr_adults, $nbr_kids);
+  $travels =  $travel->search($d_station, $a_station, $date_d, $train_type, $nbr_adults, $nbr_kids);
 }
+$title = "Stations | Trainpal";
+include("include/head.php");
 ?>
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-
-  <link href="assets/css/style.css" rel="stylesheet" />
-  <title>Search page | YouTrain</title>
-</head>
 
 <body>
   <header class="masthead">
@@ -44,10 +29,7 @@ function searching()
       </div>
     </div>
   </header>
-
   <?php require_once 'include/navbar-user.php'; ?>
-
-
   <?php require_once 'views/searchBoxView.php'; ?>
   <section id="tickets">
     <div class="container">

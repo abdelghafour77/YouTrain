@@ -1,8 +1,6 @@
 <?php
 require_once dirname(__DIR__) . '/include/session.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +11,8 @@ require_once dirname(__DIR__) . '/include/session.php';
         echo $title;
         ?>
     </title>
+    <!-- ====================== FavIcon ===================== -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <!-- ================== BEGIN core-css ================== -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css">
@@ -31,6 +31,5 @@ require_once dirname(__DIR__) . '/include/session.php';
     <!-- BEGIN parsley js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js" integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- END parsley js-->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
-</html>
