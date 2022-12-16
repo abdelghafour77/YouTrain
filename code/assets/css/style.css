@@ -12,6 +12,23 @@ body {
 
 /* ////////// start faissal /////////// */
 
+
+#signup {
+    background-image: url(../img/yay.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#login {
+    background-image: url(../img/trains.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+
+
+}
+
 .form-style {
     min-height: 100vh;
     display: flex;

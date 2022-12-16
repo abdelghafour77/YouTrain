@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
 $title = "Cities | Trainpal";
 include("include/head.php");
@@ -66,3 +69,5 @@ include("include/head.php");
     <script src="assets/js/main.js"></script>
     <?php require_once 'include/alert.php'; ?>
 </body>
+
+</html>

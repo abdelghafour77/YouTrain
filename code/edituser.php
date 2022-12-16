@@ -6,19 +6,12 @@ if (isset($_GET['iduser'])) {
     $obj->setId($_GET['iduser']);
     $user = $obj->getUser();
     $admin = $user['admin'];
-
-    // var_dump($user);
-    // die;
 } else {
-    // var_dump($_SESSION);
     $obj = new User();
     $obj->setId($_SESSION['id']);
     $user = $obj->getUser();
-    // var_dump($user);
-    // die;
 }
-// var_dump($user);
-// die;
+
 
 ?>
 

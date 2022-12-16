@@ -1,5 +1,4 @@
 <?php
-
 require_once dirname(__DIR__) . '/code/include/session.php';
 require 'models/travel.php';
 if (isset($_GET['searching'])) {
@@ -41,10 +40,7 @@ if (isset($_GET['searching'])) {
       </div>
     </div>
   </header>
-
   <?php require_once 'include/navbar-user.php'; ?>
-
-
   <?php require_once 'views/searchBoxView.php'; ?>
   <section id="tickets">
     <div class="container">
