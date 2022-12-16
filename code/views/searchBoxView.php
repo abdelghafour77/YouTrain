@@ -15,7 +15,7 @@ $trainTypes = (new TrainType())->allTrainType();
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Departure station</span>
-                  <select class="form-control" name="d_station" id="d_station" required>
+                  <select class="form-control" name="d_station" id="d_station">
                     <option value="" disabled selected> Departure station</option>
                     <?php foreach ($stations as $station) { ?>
                       <option value="<?= $station['id'] ?>"><?= $station['city'] . ' - ' . $station['name'] ?></option>
@@ -27,7 +27,7 @@ $trainTypes = (new TrainType())->allTrainType();
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Arrival station</span>
-                  <select class="form-control" name="a_station" id="a_station" required>
+                  <select class="form-control" name="a_station" id="a_station">
                     <option value="" disabled selected> Arrival station</option>
                     <?php foreach ($stations as $station) { ?>
                       <option value="<?= $station['id'] ?>"><?= $station['city'] . ' - ' . $station['name'] ?></option>
@@ -41,13 +41,13 @@ $trainTypes = (new TrainType())->allTrainType();
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Departing</span>
-                  <input class="form-control" type="date" name="date_d" id="date_d" required>
+                  <input class="form-control" type="date" name="date_d" id="date_d">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Train type</span>
-                  <select class="form-control" name="train_type" id="train_type" required>
+                  <select class="form-control" name="train_type" id="train_type">
                     <option value="" disabled selected>Train type</option>
                     <?php foreach ($trainTypes as $trainType) { ?>
                       <option value="<?= $trainType['id'] ?>"><?= $trainType['name'] ?></option>
@@ -61,7 +61,7 @@ $trainTypes = (new TrainType())->allTrainType();
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Adults (18+)</span>
-                  <select class="form-control" name="nbr_adults" id="nbr_adults" required>
+                  <select class="form-control" name="nbr_adults" id="nbr_adults">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -72,7 +72,7 @@ $trainTypes = (new TrainType())->allTrainType();
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Children (0-17)</span>
-                  <select class="form-control" name="nbr_kids" id="nbr_kids" required>
+                  <select class="form-control" name="nbr_kids" id="nbr_kids">
                     <option>0</option>
                     <option>1</option>
                     <option>2</option>

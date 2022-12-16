@@ -2,19 +2,16 @@
 
 require_once dirname(__DIR__) . '/code/include/session.php';
 require 'models/travel.php';
-if (isset($_GET['searching']) && isset($_GET['d_station']) && isset($_GET['a_station']) && isset($_GET['date_d']) && isset($_GET['train_type']) && isset($_GET['nbr_adults']) && isset($_GET['nbr_kids'])) {
-  $travels = searching();
-} else {
-  // header('location: 404.php');
-  // die;
-}
-
-function searching()
-{
+if (isset($_GET['searching'])) {
+  $d_station = null;
+  $a_station = null;
+  $date_d = null;
+  $train_type = null;
+  $nbr_adults = null;
+  $nbr_kids = null;
   extract($_GET);
   $travel = new Travel();
-
-  return $travel->search($d_station, $a_station, $date_d, $train_type, $nbr_adults, $nbr_kids);
+  $travels =  $travel->search($d_station, $a_station, $date_d, $train_type, $nbr_adults, $nbr_kids);
 }
 ?>
 <!DOCTYPE html>
