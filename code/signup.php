@@ -21,8 +21,11 @@ require_once 'include/role.php';
             <div class="mt-3 mb-4">
                 <button type="submit" name="signup" class="form-btn text-black">Register Now</button>
             </div>
-            <p class="fs-6 mt-2 text-light">Already have an account? <button class="btn btn-outline-danger btn-sm ms-1">
-                    <a href="login.php" class="text-decoration-none text-white text-center">Login</a></button></p>
+            <p class="fs-6 mt-2 text-light">Already have an account?
+                <a href="login.php" class="text-decoration-none text-white text-center btn btn-outline-danger btn-sm ms-1">
+                    Login
+                </a>
+            </p>
         </form>
     </div>
     <?php require_once 'include/alert.php'; ?>
