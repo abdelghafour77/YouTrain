@@ -24,7 +24,7 @@ if (isset($_POST['save'])) {
 if (isset($_GET['id'])) {
     extract($_GET);
     $travel = new Travel();
-    $travel->getId($id);
+    $travel->setId($id);
     $travel->deleteTravel();
     header('location:../travels.php');
 }

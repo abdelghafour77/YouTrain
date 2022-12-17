@@ -21,7 +21,7 @@ class Station extends Connection
         $this->city = $city;
     }
 
-    function getId($id)
+    function setId($id)
     {
         $this->id = $id;
     }
@@ -36,8 +36,6 @@ class Station extends Connection
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        // var_dump($stmt);
-        // die;
         return $result;
     }
 
@@ -56,6 +54,13 @@ class Station extends Connection
         $sql = "INSERT INTO `stations`(`name`, `address`, `capacity`, `city_id`) VALUES (?, ?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->name, $this->address, $this->capacity, $this->city]);
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'Station add successfully';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
     }
 
     public function deleteStation()
@@ -63,6 +68,13 @@ class Station extends Connection
         $sql = "DELETE FROM stations WHERE id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->id]);
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'Station are deleted';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
     }
 
     public function updateStation()
@@ -70,6 +82,12 @@ class Station extends Connection
         $sql = "UPDATE `stations` SET `name`= ? ,`address`= ?,`capacity`= ?,`city_id`= ? WHERE id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->name, $this->address, $this->capacity, $this->city, $this->id]);
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'Station are updated';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
     }
-
 }

@@ -1,6 +1,5 @@
 <?php
 require 'connection.php';
-// session_start();
 
 class User extends Connection
 {
@@ -11,7 +10,6 @@ class User extends Connection
     public $phone;
     public $age;
     public $password;
-
 
     function __construct($email = null, $password = null, $first_name = null, $last_name = null, $phone = null, $age = null, $id = null, $admin = null)
 
@@ -25,7 +23,10 @@ class User extends Connection
         $this->id = $id;
         $this->admin = $admin;
     }
-
+    function setId($id)
+    {
+        $this->id = $id;
+    }
 
     public function registration()
     {
@@ -55,16 +56,12 @@ class User extends Connection
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->email]);
         $result = $stmt->fetch();
-        //var_dump($result);
-        //die;
         if (!isset($result["password"])) {
             $_SESSION['type_message'] = "error";
             $_SESSION['message'] = "Email incorrect";
             header('location: ../login.php');
         } else {
-            // for hashed password
             $res = password_verify($this->password, $result["password"]);
-            // $res = ($result["password"] == $this->password) ? true : false;
             if ($res) {
                 $_SESSION['id'] = $result['id'];
                 $_SESSION['first_name'] = $result['first_name'];
@@ -76,7 +73,7 @@ class User extends Connection
                 header('location:../index.php');
             } else {
                 $_SESSION['type_message'] = "error";
-                $_SESSION['message'] = 'Mot de passe incorrect';
+                $_SESSION['message'] = 'Password incorrect';
                 header('location:../login.php');
             }
         }
@@ -85,15 +82,16 @@ class User extends Connection
     public function updateUser()
     {
 
-        $_SESSION['id'] = $_POST['id'];
-        $_SESSION['first_name'] = $_POST['first_name'];
-        $_SESSION['last_name'] = $_POST['last_name'];
-        $_SESSION['age'] = $_POST['age'];
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['phone'] = $_POST['phone'];
-        $_SESSION['password'] = $_POST['password'];
+        if ($_SESSION['id'] == $this->id) {
+            $_SESSION['id'] = $_POST['id'];
+            $_SESSION['first_name'] = $_POST['first_name'];
+            $_SESSION['last_name'] = $_POST['last_name'];
+            $_SESSION['age'] = $_POST['age'];
+            $_SESSION['email'] = $_POST['email'];
+            $_SESSION['phone'] = $_POST['phone'];
+            $_SESSION['password'] = $_POST['password'];
+        }
         if (isset($_POST['admin'])) {
-
             $upd = "UPDATE `users` SET `first_name`= ? ,`last_name`= ? ,`age`= ? ,`email`= ? ,`phone`= ? ,`password`= ? ,`admin`=?  WHERE `id` = ?";
             $stmt = $this->connect()->prepare($upd);
             $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $this->admin, $this->id]);
@@ -102,10 +100,14 @@ class User extends Connection
             $stmt = $this->connect()->prepare($upd);
             $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $this->id]);
         }
-        // var_dump($this);
-        // die;
-        header('location:../usersgi.php');
-
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'Information are updated';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
+        header('location:../users.php');
         die;
     }
 
@@ -122,9 +124,7 @@ class User extends Connection
         $sql = "SELECT * FROM users where id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->id]);
-
         $result = $stmt->fetch();
-        // var_dump($this);
         return $result;
     }
     public function deleteUser()
@@ -132,10 +132,18 @@ class User extends Connection
         $dele = "DELETE FROM users WHERE id = ?";
         $stmt = $this->connect()->prepare($dele);
         $stmt->execute([$this->id]);
-        session_destroy();
-    }
-    function setId($id)
-    {
-        $this->id = $id;
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'Account are deleted';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
+        if ($this->id == $_SESSION['id']) {
+            session_destroy();
+        } else {
+            header('location: index.php');
+            die;
+        }
     }
 }

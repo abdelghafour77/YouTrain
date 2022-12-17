@@ -12,7 +12,7 @@ if (isset($_POST['save'])) {
 if (isset($_GET['id'])) {
     extract($_GET);
     $station = new Station();
-    $station->getId($id);
+    $station->setId($id);
     $station->deleteStation();
     header('location:../stations.php');
 }
@@ -23,4 +23,3 @@ if (isset($_POST['update'])) {
     $station->updateStation();
     header('location:../stations.php');
 }
-

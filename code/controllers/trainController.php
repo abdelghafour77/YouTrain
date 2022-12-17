@@ -11,7 +11,7 @@ if (isset($_POST['save'])) {
 if (isset($_GET['id'])) {
     extract($_GET);
     $train = new Train();
-    $train->getId($id);
+    $train->setId($id);
     $train->deleteTrain();
     header('location:../trains.php');
 }

@@ -23,7 +23,7 @@ class Travel extends Connection
     $this->train = $train;
   }
 
-  function getId($id)
+  function setId($id)
   {
     $this->id = $id;
   }
@@ -68,6 +68,13 @@ class Travel extends Connection
         VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$this->time, $this->price, $this->start, $this->end, $this->date, $this->train]);
+    if ($stmt) {
+      $_SESSION['type_message'] = "success";
+      $_SESSION['message'] = 'Travel add successfully';
+    } else {
+      $_SESSION['type_message'] = "error";
+      $_SESSION['message'] = 'Retry again !';
+    }
   }
 
   public function deleteTravel()
@@ -75,6 +82,13 @@ class Travel extends Connection
     $sql = "DELETE FROM travels WHERE id = ?";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$this->id]);
+    if ($stmt) {
+      $_SESSION['type_message'] = "success";
+      $_SESSION['message'] = 'Travel deleted successfully';
+    } else {
+      $_SESSION['type_message'] = "error";
+      $_SESSION['message'] = 'Retry again !';
+    }
   }
 
   public function updateTravel()
@@ -82,8 +96,13 @@ class Travel extends Connection
     $sql = "UPDATE `travels` SET `time`= ?,`price`= ?,`start_station_id`= ?,`end_station_id`= ?,`date_start`= ?, `train_id`= ? WHERE id = ?";
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute([$this->time, $this->price, $this->start, $this->end, $this->date, $this->train, $this->id]);
-    // var_dump($stmt);
-    // die;
+    if ($stmt) {
+      $_SESSION['type_message'] = "success";
+      $_SESSION['message'] = 'Travel updated successfully';
+    } else {
+      $_SESSION['type_message'] = "error";
+      $_SESSION['message'] = 'Retry again !';
+    }
   }
 
   public function search($d_station = null, $a_station = null, $date_d = null, $train_type = null, $nbr_adults = null, $nbr_kids = null)

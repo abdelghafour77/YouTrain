@@ -16,7 +16,7 @@ class Train extends Connection
         $this->type = $type;
     }
 
-    function getId($id)
+    function setId($id)
     {
         $this->id = $id;
     }
@@ -48,6 +48,13 @@ class Train extends Connection
         $sql = "INSERT INTO `trains`(`name`, `capacity`, `type_id`) VALUES (?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->name, $this->capacity, $this->type]);
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'Train add successfully';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
     }
 
     public function deleteTrain()
@@ -55,6 +62,13 @@ class Train extends Connection
         $sql = "DELETE FROM trains WHERE id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->id]);
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'Train deleted successfully';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
     }
 
     public function updateTrain()
@@ -62,6 +76,12 @@ class Train extends Connection
         $sql = "UPDATE `trains` SET `name`= ? , `capacity`= ?,`type_id`= ? WHERE id = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->name, $this->capacity, $this->type, $this->id]);
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'Train updated successfully';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
     }
-
 }
