@@ -12,7 +12,7 @@ class City extends Connection
         $this->id = $id;
     }
 
-    function getId($id)
+    function setId($id)
     {
         $this->id = $id;
     }
@@ -31,13 +31,27 @@ class City extends Connection
         $sql = "INSERT INTO cities (`name`) VALUES (?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->name]);
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'City added successfully';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
     }
 
     public function deleteCity()
     {
-        $sql = "DELETE FROM cities WHERE id = ?,";
+        $sql = "DELETE FROM cities WHERE id = ? ";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->id]);
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'City are deleted';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
     }
 
     public function updateCity()
@@ -47,5 +61,12 @@ class City extends Connection
         // var_dump($this);
         // die;
         $stmt->execute([$this->name, $this->id]);
+        if ($stmt) {
+            $_SESSION['type_message'] = "success";
+            $_SESSION['message'] = 'City are updated';
+        } else {
+            $_SESSION['type_message'] = "error";
+            $_SESSION['message'] = 'Retry again !';
+        }
     }
 }

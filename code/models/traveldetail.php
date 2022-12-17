@@ -11,7 +11,7 @@ class TravelDetail extends Connection
         $this->id  = $id;
     }
 
-    function getId($id)
+    function setId($id)
     {
         $this->id = $id;
     }
@@ -31,10 +31,6 @@ class TravelDetail extends Connection
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$this->id]);
         $result = $stmt->fetch();
-
-        // var_dump($result);
-        // die;
-
         return $result;
     }
 }

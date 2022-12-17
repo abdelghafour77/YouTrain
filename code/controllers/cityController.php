@@ -11,7 +11,7 @@ if (isset($_POST['save'])) {
 if (isset($_GET['id'])) {
     extract($_GET);
     $city = new City();
-    $city->getId($id);
+    $city->setId($id);
     $city->deleteCity();
     header('location:../cities.php');
 }

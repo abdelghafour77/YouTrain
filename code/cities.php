@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-$title = "Cities | Trainpal";
+$title = "Cities | YouTrain";
 include("include/head.php");
 ?>
 

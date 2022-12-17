@@ -2,7 +2,6 @@
 if (isset($travels)) {
   if (count($travels) == 0) {
     echo '<h1> NO DATA </h1>';
-    die;
   }
   foreach ($travels as $travel) {
 
@@ -33,7 +32,7 @@ if (isset($travels)) {
           <p><?= $travel['city_start'] . ' - ' . $travel['station_start'] . ' To ' . $travel['city_end'] . ' - ' . $travel['station_end'] ?></p>
         </div>
         <?php if ($travel['capacity'] > $travel['seat']) { ?>
-          <a class="book" href="#">Booking</a>
+          <a class="book" href="#">Book Now</a>
         <?php } else { ?>
           <a class="disabled">Full Travel</a>
         <?php } ?>

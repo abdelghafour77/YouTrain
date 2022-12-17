@@ -95,10 +95,14 @@ $trainTypes = (new TrainType())->allTrainType();
   </div>
 </section>
 <script>
-  document.getElementById('d_station').value = "<?= $_SESSION['search']['start_station'] ?>";
-  document.getElementById('a_station').value = "<?= $_SESSION['search']['end_station'] ?>";
-  document.getElementById('date_d').value = "<?= $_SESSION['search']['date_start'] ?>";
-  document.getElementById('train_type').value = "<?= $_SESSION['search']['train_type'] ?>";
-  document.getElementById('nbr_adults').value = "<?= $_SESSION['search']['nbr_adults'] ?>";
-  document.getElementById('nbr_kids').value = "<?= $_SESSION['search']['nbr_kids'] ?>";
+  <?php
+  if (isset($_SESSION['search'])) {
+  ?>
+    document.getElementById('d_station').value = "<?= $_SESSION['search']['start_station'] ?>";
+    document.getElementById('a_station').value = "<?= $_SESSION['search']['end_station'] ?>";
+    document.getElementById('date_d').value = "<?= $_SESSION['search']['date_start'] ?>";
+    document.getElementById('train_type').value = "<?= $_SESSION['search']['train_type'] ?>";
+    document.getElementById('nbr_adults').value = "<?= $_SESSION['search']['nbr_adults'] ?>";
+    document.getElementById('nbr_kids').value = "<?= $_SESSION['search']['nbr_kids'] ?>";
+  <?php  } ?>
 </script>

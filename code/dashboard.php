@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$title = "Dashboard | Trainpal";
+$title = "Dashboard | YouTrain";
 include("include/head.php");
 ?>
 

@@ -10,7 +10,7 @@ $all_travels = new TravelDetail();
 if (isset($_GET['id'])) {
     extract($_GET);
     $travel = new TravelDetail();
-    $travel->getId($id);
+    $travel->setId($id);
     // var_dump($travel);
     // die;
     $travels = $travel->allTravelDetails();

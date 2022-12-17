@@ -22,12 +22,14 @@ if (isset($_POST['updateUser'])) {
         $user->setId($id);
         $user = $user->getUser();
         $password = $user['password'];
-        var_dump($user);
+        // var_dump($user);
         // die;
+    } else {
+        $password = password_hash($password, PASSWORD_DEFAULT);
     }
 
     $user = new User($email, $password, $first_name, $last_name, $phone, $age, $id, $admin);
-    // var_dump($user);
+    var_dump($user);
     // die;
     $user->updateUser();
 }
