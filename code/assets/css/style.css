@@ -384,7 +384,8 @@ nav {
     line-height: 24px;
     height: 24px;
     font-size: 12px;
-    color: #98c9ee
+    color: #98c9ee;
+    z-index: 1;
 }
 
 .booking-form .submit-btn {
@@ -440,6 +441,10 @@ nav {
     /* text-transform: uppercase; */
     border-radius: 4px;
     position: relative
+}
+
+article.card.view-card:last-child {
+    margin-bottom: 2rem;
 }
 
 .date {
@@ -684,5 +689,89 @@ a {
     background-color: #575d62;
 }
 
+
+
+.form-control:focus {
+    /* border: 1px solid #34495e; */
+    background: #f9fafb
+}
+
+/* SELECT2 JS */
+.select2.select2-container {
+    width: 100% !important;
+}
+
+.select2.select2-container .select2-selection {
+    background-color: #fff;
+    height: 65px;
+    padding: 0 15px;
+    padding-top: 24px;
+    color: #191a1e;
+    border: 2px solid #dfe5e9;
+    font-size: 16px;
+    font-weight: 700;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 4px;
+    -webkit-transition: .2s all;
+    transition: .2s all
+}
+
+.select2.select2-container .select2-selection .select2-selection__arrow {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    width: 32px;
+    line-height: 32px;
+    height: 32px;
+    text-align: center;
+    pointer-events: none;
+    color: #dfe5e9;
+    font-size: 14px
+}
+
+.select2-selection__arrow {
+    top: unset !important;
+}
+
+.select2.select2-container .select2-selection .select2-selection__arrow::after {
+    content: '\279C';
+    display: block;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    display: none;
+}
+
+
+.select2-container .select2-dropdown .select2-search {
+    padding: 0;
+}
+
+.select2-container .select2-dropdown .select2-search input {
+    outline: none !important;
+    border: 1px solid #34495e !important;
+    border-bottom: none !important;
+    padding: 4px 6px !important;
+}
+
+.select2-container .select2-dropdown .select2-results {
+    padding: 0;
+}
+
+.select2-container .select2-dropdown .select2-results ul {
+    background: #fff;
+    border: 1px solid #34495e;
+}
+
+.select2-container .select2-dropdown .select2-results ul .select2-results__option--highlighted[aria-selected] {
+    background-color: #3498db;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0;
+}
 
 /* //////// end abdelghafour ////////// */
