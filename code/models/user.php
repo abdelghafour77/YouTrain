@@ -91,14 +91,16 @@ class User extends Connection
             $_SESSION['phone'] = $_POST['phone'];
             $_SESSION['password'] = $_POST['password'];
         }
+        $id = $_SESSION['id'];
+        $time = date("Y-m-d H:i:s");
         if (isset($_POST['admin'])) {
-            $upd = "UPDATE `users` SET `first_name`= ? ,`last_name`= ? ,`age`= ? ,`email`= ? ,`phone`= ? ,`password`= ? ,`admin`=?  WHERE `id` = ?";
+            $upd = "UPDATE `users` SET `first_name`= ? ,`last_name`= ? ,`age`= ? ,`email`= ? ,`phone`= ? ,`password`= ? ,`admin`=? , `updated_at`=? ,`updated_by`=? WHERE `id` = ?";
             $stmt = $this->connect()->prepare($upd);
-            $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $this->admin, $this->id]);
+            $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $this->admin, $time, $id, $this->id]);
         } else {
-            $upd = "UPDATE `users` SET `first_name`= ? ,`last_name`= ? ,`age`= ? ,`email`= ? ,`phone`= ? ,`password`= ?  WHERE `id` = ?";
+            $upd = "UPDATE `users` SET `first_name`= ? ,`last_name`= ? ,`age`= ? ,`email`= ? ,`phone`= ? ,`password`= ? ,`updated_at`=? ,`updated_by`=? WHERE `id` = ?";
             $stmt = $this->connect()->prepare($upd);
-            $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $this->id]);
+            $stmt->execute([$this->first_name, $this->last_name, $this->age, $this->email, $this->phone, $this->password, $time, $id, $this->id]);
         }
         if ($stmt) {
             $_SESSION['type_message'] = "success";
