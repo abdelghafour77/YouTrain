@@ -14,6 +14,7 @@ include("include/head.php");
     <!-- END navbar -->
     <!-- BEGIN Offcanvas -->
     <?php
+    $page = 'cities';
     include("include/sidebar.php");
     ?>
     <!-- END Offcanvas -->

@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Dec 15, 2022 at 10:24 AM
--- Server version: 8.0.27
--- PHP Version: 7.4.26
+-- Hôte : 127.0.0.1:3306
+-- Généré le : sam. 17 déc. 2022 à 19:54
+-- Version du serveur : 8.0.27
+-- Version de PHP : 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `youtrain`
+-- Base de données : `youtrain`
 --
 CREATE DATABASE IF NOT EXISTS `youtrain` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `youtrain`;
@@ -26,7 +26,7 @@ USE `youtrain`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bookings`
+-- Structure de la table `bookings`
 --
 
 DROP TABLE IF EXISTS `bookings`;
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `bookings` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `bookings`
+-- Déchargement des données de la table `bookings`
 --
 
 INSERT INTO `bookings` (`id`, `user_id`, `travel_id`, `nbr_adults`, `nbr_kids`, `created_at`, `updated_at`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `bookings` (`id`, `user_id`, `travel_id`, `nbr_adults`, `nbr_kids`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `card_payments`
+-- Structure de la table `card_payments`
 --
 
 DROP TABLE IF EXISTS `card_payments`;
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `card_payments` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cities`
+-- Structure de la table `cities`
 --
 
 DROP TABLE IF EXISTS `cities`;
@@ -79,10 +79,10 @@ CREATE TABLE IF NOT EXISTS `cities` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=405 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=406 DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `cities`
+-- Déchargement des données de la table `cities`
 --
 
 INSERT INTO `cities` (`id`, `name`) VALUES
@@ -224,7 +224,6 @@ INSERT INTO `cities` (`id`, `name`) VALUES
 (146, 'Tamansourt'),
 (147, 'Tameslouht'),
 (148, 'Tanalt'),
-(149, 'Zeubelemok'),
 (150, 'Meknès‎'),
 (151, 'Khénifra'),
 (152, 'Agourai'),
@@ -484,7 +483,7 @@ INSERT INTO `cities` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stations`
+-- Structure de la table `stations`
 --
 
 DROP TABLE IF EXISTS `stations`;
@@ -495,20 +494,30 @@ CREATE TABLE IF NOT EXISTS `stations` (
   `capacity` int NOT NULL,
   `city_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `stations`
+-- Déchargement des données de la table `stations`
 --
 
 INSERT INTO `stations` (`id`, `name`, `address`, `capacity`, `city_id`) VALUES
-(1, 'Youssoufia', ' R201, Youssoufia', 900, 75),
-(2, 'Marrakech', 'Centre Guéliz Gare ONCF Marrakech، 40100', 3200, 103);
+(1, 'Gare Youssoufia', 'R201, Youssoufia', 900, 57),
+(2, 'Gare De Marrakech', 'Centre Guéliz Gare ONCF Marrakech، 40100', 3200, 103),
+(3, 'Gare Rabat Agdal', 'Av. El Hadj Ahmed Charkaoui, Rabat', 3000, 252),
+(4, 'Gare de Kénitra', 'Ave des FAR, Kenitra', 1900, 79),
+(5, 'Gare de Mohammédia', 'Mohammedia', 1500, 6),
+(6, 'Casa Port', 'Bd de Fes, Casablanca 20250', 3000, 4),
+(7, 'Casa Voyageurs', 'Casablanca 20250', 4000, 4),
+(8, 'Aïn Sebâa', 'Casablanca 20250', 2300, 4),
+(9, 'Gare de Fès', 'Fes 30050', 2500, 58),
+(10, 'Gare Settat', 'Settat', 2000, 30),
+(11, 'Bouznika', 'Bouznika', 2000, 15),
+(12, 'Temara', 'Temara', 700, 263);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trains`
+-- Structure de la table `trains`
 --
 
 DROP TABLE IF EXISTS `trains`;
@@ -518,19 +527,22 @@ CREATE TABLE IF NOT EXISTS `trains` (
   `capacity` int NOT NULL,
   `type_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `trains`
+-- Déchargement des données de la table `trains`
 --
 
 INSERT INTO `trains` (`id`, `name`, `capacity`, `type_id`) VALUES
-(1, 'N305', 270, 1);
+(1, 'N304', 270, 1),
+(2, 'L102', 150, 2),
+(3, 'Z303', 120, 1),
+(4, 'L224', 270, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `travels`
+-- Structure de la table `travels`
 --
 
 DROP TABLE IF EXISTS `travels`;
@@ -545,22 +557,29 @@ CREATE TABLE IF NOT EXISTS `travels` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL,
   `created_by` int NOT NULL,
-  `updated_by` int NOT NULL,
+  `updated_by` int DEFAULT NULL,
   `train_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `travels`
+-- Déchargement des données de la table `travels`
 --
 
 INSERT INTO `travels` (`id`, `time`, `price`, `seat`, `start_station_id`, `end_station_id`, `date_start`, `created_at`, `updated_at`, `created_by`, `updated_by`, `train_id`) VALUES
-(1, 3, 90, 700, 1, 2, '2022-12-09 10:12:05', '2022-12-08 10:12:05', '2022-12-08 10:12:05', 1, 1, 1);
+(1, 3, 90, 278, 1, 2, '2022-12-21 22:12:05', '2022-12-08 10:12:05', '2022-12-08 10:12:05', 1, 1, 1),
+(2, 1, 40, 0, 2, 1, '2022-12-19 10:12:05', '2022-12-11 10:12:05', '2022-12-11 10:12:05', 1, 1, 2),
+(3, 3, 72, 0, 1, 2, '2022-12-22 20:21:00', '2022-12-13 20:18:53', '0000-00-00 00:00:00', 0, 1, 1),
+(4, 7, 852, 0, 2, 9, '2022-12-19 04:53:00', '2022-12-13 21:54:41', '0000-00-00 00:00:00', 0, 4, 3),
+(5, 2, 50, 0, 2, 1, '2022-12-24 19:14:00', '2022-12-16 19:14:51', '0000-00-00 00:00:00', 0, 1, 3),
+(6, 3, 100, 0, 1, 12, '2022-12-23 17:38:00', '2022-12-17 17:39:23', '0000-00-00 00:00:00', 0, 4, 3),
+(7, 4, 110, 0, 1, 3, '2022-12-20 18:14:00', '2022-12-17 18:14:56', '0000-00-00 00:00:00', 0, 1, 3),
+(8, 4, 339, 0, 10, 4, '1980-11-23 10:30:00', '2022-12-17 18:30:24', '0000-00-00 00:00:00', 4, 4, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `type_trains`
+-- Structure de la table `type_trains`
 --
 
 DROP TABLE IF EXISTS `type_trains`;
@@ -572,17 +591,17 @@ CREATE TABLE IF NOT EXISTS `type_trains` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `type_trains`
+-- Déchargement des données de la table `type_trains`
 --
 
 INSERT INTO `type_trains` (`id`, `name`, `speed`) VALUES
-(1, 'atlas', 130),
-(2, 'bouraq', 320);
+(1, 'Atlas', 130),
+(2, 'El Bouraq', 320);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -599,16 +618,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NOT NULL,
   `updated_by` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `age`, `email`, `phone`, `password`, `admin`, `created_at`, `updated_at`, `updated_by`) VALUES
-(1, 'said', 'Bailey', 0, 'nybisymi@mailinator.com', '', '$2y$10$7ZNruRGZkA43jzmPMZk4VOW6Ltuv/1TZ5NZgUTZFPPudmvOODkRyO', 1, '2022-12-15 08:38:42', '0000-00-00 00:00:00', 0),
-(3, 'Solomono', 'Ortiz', 18, 'pisyboceb@mailinator.com', '', '$2y$10$CpScmUcYOei5v30USHvDmO//bM4QTSaVdmKrG9sRfh/l2WMxS3HTO', 0, '2022-12-13 10:58:20', '0000-00-00 00:00:00', 0),
-(4, 'Justina', 'Copeland', 15, 'luxyw@mailinator.com', '', '$2y$10$EPjaoazFlckbN.gbJWCineUOMvuydresmEhT/.N.c4Jo3X.Cg7A1G', 0, '2022-12-13 10:58:26', '0000-00-00 00:00:00', 0);
+(1, 'Abdelghafour', 'Aouad', 22, 'miso.abdo@gmail.com', '0620785937', '$2y$10$eAoliPV3tkxhYsNDZ9jpCO/m/FpjqMrVM5G/NjbJrzCHHW9nNGk3C', 1, '2022-12-16 19:12:40', '2022-12-17 17:37:03', 1),
+(3, 'Mohammed', 'Chekir', 18, 'mohammed.chekir@gmail.com', '066666666', '$2y$10$E.k2TRUDX/hBLfQPDENUm.6/GkVAajZshors56EVGFCN.2K5qlbYS', 0, '2022-12-13 20:10:04', '2022-12-17 17:35:51', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

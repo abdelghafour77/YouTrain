@@ -13,6 +13,7 @@ include("include/head.php");
     <!-- END navbar -->
     <!-- BEGIN Offcanvas -->
     <?php
+    $page = 'trains';
     include("include/sidebar.php");
     ?>
     <!-- END Offcanvas -->

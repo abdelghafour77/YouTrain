@@ -11,6 +11,8 @@ require_once dirname(__DIR__) . '/include/session.php';
         echo $title;
         ?>
     </title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <!-- ====================== FavIcon ===================== -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <!-- ================== BEGIN core-css ================== -->

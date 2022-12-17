@@ -5,48 +5,48 @@
                 <img src="assets/img/logo.webp" class="img-fluid ps-3" alt="Bootstrap" width="180" height="40">
             </a>
         </div>
-        <button type="button" class="btn-close close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close close-offcanvas btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body p-0">
         <nav class="navbar-dark px-4">
             <ul class="navbar-nav sidebar-text mt-4">
-                <li>
-                    <a href="dashboard.php" class="nav-link active mt-2">
+                <li class="btn-sidebar <?= ($page == "dashboard") ? 'active' : '' ?>">
+                    <a href="dashboard.php" class="nav-link active">
                         <span class="me-4"><i class="bi bi-grid-1x2-fill"></i></span>
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li>
-                    <a href="users.php" class="nav-link active mt-2">
+                <li class="btn-sidebar <?= ($page == "users") ? 'active' : '' ?>">
+                    <a href="users.php" class="nav-link active">
                         <span class="me-4"><i class="bi bi-people-fill"></i></span>
                         <span>All Users</span>
                     </a>
                 </li>
-                <li>
-                    <a href="cities.php" class="nav-link active mt-2">
+                <li class="btn-sidebar <?= ($page == "cities") ? 'active' : '' ?>">
+                    <a href="cities.php" class="nav-link active">
                         <span class="me-4"><i class="bi bi-buildings"></i></span>
                         <span>Cities</span>
                     </a>
                 </li>
-                <li>
+                <li class="btn-sidebar <?= ($page == "stations") ? 'active' : '' ?>">
                     <a href="stations.php" class="nav-link active mt-2">
                         <span class="me-4"><i class="bi bi-signpost-2"></i></span>
                         <span>Stations</span>
                     </a>
                 </li>
-                <li>
+                <li class="btn-sidebar <?= ($page == "trains") ? 'active' : '' ?>">
                     <a href="trains.php" class="nav-link active mt-2">
                         <span class="me-4"><i class="bi bi-train-front-fill"></i></i></span>
                         <span>Trains</span>
                     </a>
                 </li>
-                <li>
+                <li class="btn-sidebar <?= ($page == "travels") ? 'active' : '' ?>">
                     <a href="travels.php" class="nav-link active mt-2">
                         <span class="me-4"><i class="bi bi-calendar2-check"></i></i></span>
                         <span>Travels</span>
                     </a>
                 </li>
-                <li>
+                <li class="btn-sidebar <?= ($page == "tickets") ? 'active' : '' ?>">
                     <a href="tickets.php" class="nav-link active mt-2">
                         <span class="me-4"><i class="bi bi-aspect-ratio"></i></i></span>
                         <span>E-tickets</span>
