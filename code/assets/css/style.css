@@ -72,7 +72,6 @@ body {
     width: 488px !important;
     height: 47px ! important;
     border-radius: 5px;
-    /* text-transform: capitalize; */
 }
 
 .form-style form .form-btn:hover {
@@ -129,21 +128,11 @@ body {
 }
 
 
-/* @media only screen and (max-width: 994px) {
-    .card {
-        display: block;
-        background-color: black;
-    }
-} */
-
-
 /* /////////// end faissal //////////// */
-
-
 /* ------------------------------------ */
-
-
 /* /////////// start hamza //////////// */
+
+
 .dropdown-toggle::after {
     display: none;
 }
@@ -158,9 +147,8 @@ body {
 }
 
 /* //////////// end hamza ///////////// */
-
-
 /* ------------------------------------ */
+/* ///////// start boutaina /////////// */
 
 .sidebar-nav {
     --bs-offcanvas-width: 270px !important;
@@ -251,14 +239,10 @@ main {
 
 }
 
-/* ///////// start boutaina /////////// */
-
 
 /* ////////// end boutaina //////////// */
-
-
 /* ------------------------------------ */
-
+/* /////// start abdelghafour ///////// */
 
 body {
     background-color: #dadde6
@@ -300,7 +284,7 @@ nav {
 }
 
 
-/* /////// start abdelghafour ///////// */
+
 
 
 .section .section-center {
@@ -683,5 +667,22 @@ a {
     border-radius: 1rem;
     box-shadow: #00000026 3px 3px 19px;
 }
+
+.btn-sidebar {
+    margin-bottom: .5rem;
+    border-radius: 0.75rem;
+    padding: 0.2rem 1.2rem 0.2rem 1.2rem;
+}
+
+.btn-sidebar:hover {
+
+    background-color: #656c72 !important;
+    transition: 0.3s;
+}
+
+.active.btn-sidebar {
+    background-color: #575d62;
+}
+
 
 /* //////// end abdelghafour ////////// */

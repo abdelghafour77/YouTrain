@@ -13,6 +13,7 @@ include("include/head.php");
     <!-- END navbar -->
     <!-- BEGIN Offcanvas -->
     <?php
+    $page = 'dashboard';
     include("include/sidebar.php");
     ?>
     <!-- END Offcanvas -->
