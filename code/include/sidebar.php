@@ -5,7 +5,7 @@
                 <img src="assets/img/logo.webp" class="img-fluid ps-3" alt="Bootstrap" width="180" height="40">
             </a>
         </div>
-        <button type="button" class="btn-close close-offcanvas" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close close-offcanvas btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body p-0">
         <nav class="navbar-dark px-4">
