@@ -2,6 +2,8 @@
 require_once 'models/booking.php';
 $book = new Booking();
 $result = $book->booking();
+// var_dump($result);
+// die;
 
 ?>
 
@@ -39,11 +41,13 @@ include("include/head.php");
                               <thead class="bg-dark text-light">
                                     <tr>
                                           <th>Booking Id</th>
-                                          <th>Full Name</th>
-                                          <th>Travel Id</th>
+                                          <th>Start Station</th>
+                                          <th>End Station</th>
+                                          <th>Booking date</th>
                                           <th>Number Of Adults</th>
                                           <th>Number Of Kids</th>
                                           <th>Ticket Price</th>
+                                          <th>Total Price</th>
                                     </tr>
                               </thead>
                               <tbody>
@@ -51,11 +55,13 @@ include("include/head.php");
                                     foreach ($result as $travel) { ?>
                                           <tr>
                                                 <td><?= $travel['id'] ?></td>
-                                                <td><?= $travel['first_name'] . " " . $travel['last_name'] ?></td>
-                                                <td><?= $travel['travel_id'] ?></td>
+                                                <td><?= $travel['start_station'] ?></td>
+                                                <td><?= $travel['end_station'] ?></td>
+                                                <td><?= $travel['created_at'] ?></td>
                                                 <td><?= $travel['nbr_adults'] ?></td>
                                                 <td><?= $travel['nbr_kids'] ?></td>
-                                                <td><?= $travel['price'] ?>$</td>
+                                                <td><?= $travel['price'] ?> MAD</td>
+                                                <td><?= ($travel['price'] * $travel['nbr_adults']) + (($travel['price'] * $travel['nbr_kids']) * 0.5) ?> MAD</td>
                                           </tr>
                                     <?php } ?>
                               </tbody>

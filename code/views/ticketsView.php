@@ -32,7 +32,7 @@ if (isset($travels)) {
           <p><?= $travel['city_start'] . ' - ' . $travel['station_start'] . ' To ' . $travel['city_end'] . ' - ' . $travel['station_end'] ?></p>
         </div>
         <?php if ($travel['capacity'] > $travel['seat']) { ?>
-          <a class="book" href="#">Book Now</a>
+          <a class="book" href="checkout.php?id_travel=<?= $travel['id'] ?>">Book Now</a>
         <?php } else { ?>
           <a class="disabled">Full Travel</a>
         <?php } ?>

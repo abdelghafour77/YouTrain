@@ -57,7 +57,7 @@ $trainTypes = (new TrainType())->allTrainType();
                 </div>
               </div>
             </div>
-            <div class="row row-search">
+            <!-- <div class="row row-search">
               <div class="col-md-6">
                 <div class="form-group">
                   <span class="form-label">Adults (18+)</span>
@@ -81,7 +81,7 @@ $trainTypes = (new TrainType())->allTrainType();
                 </div>
               </div>
 
-            </div>
+            </div> -->
             <div class="form-btn">
               <input type="submit" class="submit-btn" name="searching" value="Show travels">
             </div>

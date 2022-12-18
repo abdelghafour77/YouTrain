@@ -1,10 +1,11 @@
 <?php
-require 'connection.php';
+require_once 'connection.php';
 
 class Ticket extends Connection
 {
     public $id;
-    function __construct($id = null) {
+    function __construct($id = null)
+    {
         $this->id = $id;
     }
 
