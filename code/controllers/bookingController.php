@@ -11,5 +11,9 @@ if (isset($_POST['checkout'])) {
   $booking = $book->checkout();
   if ($payment and $booking) {
     header("location: ../done.php");
+  } else {
+    $_SESSION['type_message'] = "error";
+    $_SESSION['message'] = "Error in booking try again !!";
+    header('location: ../index.php');
   }
 }
