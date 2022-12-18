@@ -10,6 +10,6 @@ if (isset($_POST['checkout'])) {
   $payment = $card->add();
   $booking = $book->checkout();
   if ($payment and $booking) {
-    header('location : done.php');
+    header("location: done.php");
   }
 }
