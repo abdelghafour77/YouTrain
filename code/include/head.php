@@ -16,6 +16,7 @@ require_once dirname(__DIR__) . '/include/session.php';
     <!-- ====================== FavIcon ===================== -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <!-- ================== BEGIN core-css ================== -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">

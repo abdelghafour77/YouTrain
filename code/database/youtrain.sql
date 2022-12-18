@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 17 déc. 2022 à 19:54
+-- Généré le : dim. 18 déc. 2022 à 19:30
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -36,17 +36,21 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   `travel_id` int NOT NULL,
   `nbr_adults` int NOT NULL,
   `nbr_kids` int NOT NULL,
-  `created_at` timestamp NOT NULL,
-  `updated_at` timestamp NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `bookings`
 --
 
 INSERT INTO `bookings` (`id`, `user_id`, `travel_id`, `nbr_adults`, `nbr_kids`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1, 0, '2022-12-09 08:48:43', '2022-12-09 08:48:43');
+(1, 1, 1, 1, 0, '2022-12-09 08:48:43', '2022-12-09 08:48:43'),
+(2, 1, 2, 1, 0, '2022-12-18 04:11:39', '2022-12-18 17:11:39'),
+(3, 1, 2, 3, 2, '2022-12-18 05:48:31', '2022-12-18 18:48:31'),
+(4, 1, 2, 3, 2, '2022-12-18 05:51:00', '2022-12-18 18:51:00'),
+(5, 1, 4, 1, 2, '2022-12-18 06:06:46', '2022-12-18 19:06:46');
 
 -- --------------------------------------------------------
 
@@ -56,17 +60,22 @@ INSERT INTO `bookings` (`id`, `user_id`, `travel_id`, `nbr_adults`, `nbr_kids`, 
 
 DROP TABLE IF EXISTS `card_payments`;
 CREATE TABLE IF NOT EXISTS `card_payments` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int NOT NULL,
+  `id` int NOT NULL,
   `card_number` varchar(17) NOT NULL,
   `full_name` varchar(80) NOT NULL,
-  `card_type` varchar(20) NOT NULL,
-  `cvc` int NOT NULL,
+  `cvv` int NOT NULL,
   `date_exp` varchar(10) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Déchargement des données de la table `card_payments`
+--
+
+INSERT INTO `card_payments` (`id`, `card_number`, `full_name`, `cvv`, `date_exp`, `created_at`, `updated_at`) VALUES
+(1, '1234567891234', 'Abdelghafour aouad', 999, '12-23', '2022-12-18 18:48:31', '2022-12-18 18:48:31');
 
 -- --------------------------------------------------------
 
