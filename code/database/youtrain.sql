@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 18 déc. 2022 à 19:30
+-- Généré le : dim. 18 déc. 2022 à 20:08
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `bookings`
@@ -50,7 +50,9 @@ INSERT INTO `bookings` (`id`, `user_id`, `travel_id`, `nbr_adults`, `nbr_kids`, 
 (2, 1, 2, 1, 0, '2022-12-18 04:11:39', '2022-12-18 17:11:39'),
 (3, 1, 2, 3, 2, '2022-12-18 05:48:31', '2022-12-18 18:48:31'),
 (4, 1, 2, 3, 2, '2022-12-18 05:51:00', '2022-12-18 18:51:00'),
-(5, 1, 4, 1, 2, '2022-12-18 06:06:46', '2022-12-18 19:06:46');
+(5, 1, 4, 1, 2, '2022-12-18 06:06:46', '2022-12-18 19:06:46'),
+(6, 1, 7, 1, 0, '2022-12-18 06:45:57', '2022-12-18 19:45:57'),
+(7, 1, 7, 1, 2, '2022-12-18 07:06:26', '2022-12-18 20:06:26');
 
 -- --------------------------------------------------------
 
@@ -564,7 +566,7 @@ CREATE TABLE IF NOT EXISTS `travels` (
   `end_station_id` int NOT NULL,
   `date_start` timestamp NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_by` int NOT NULL,
   `updated_by` int DEFAULT NULL,
   `train_id` int NOT NULL,
@@ -576,13 +578,13 @@ CREATE TABLE IF NOT EXISTS `travels` (
 --
 
 INSERT INTO `travels` (`id`, `time`, `price`, `seat`, `start_station_id`, `end_station_id`, `date_start`, `created_at`, `updated_at`, `created_by`, `updated_by`, `train_id`) VALUES
-(1, 3, 90, 278, 1, 2, '2022-12-21 22:12:05', '2022-12-08 10:12:05', '2022-12-08 10:12:05', 1, 1, 1),
+(1, 3, 90, 273, 1, 2, '2022-12-21 22:12:05', '2022-12-08 10:12:05', '2022-12-08 10:12:05', 1, 1, 1),
 (2, 1, 40, 0, 2, 1, '2022-12-19 10:12:05', '2022-12-11 10:12:05', '2022-12-11 10:12:05', 1, 1, 2),
 (3, 3, 72, 0, 1, 2, '2022-12-22 20:21:00', '2022-12-13 20:18:53', '0000-00-00 00:00:00', 0, 1, 1),
 (4, 7, 852, 0, 2, 9, '2022-12-19 04:53:00', '2022-12-13 21:54:41', '0000-00-00 00:00:00', 0, 4, 3),
 (5, 2, 50, 0, 2, 1, '2022-12-24 19:14:00', '2022-12-16 19:14:51', '0000-00-00 00:00:00', 0, 1, 3),
 (6, 3, 100, 0, 1, 12, '2022-12-23 17:38:00', '2022-12-17 17:39:23', '0000-00-00 00:00:00', 0, 4, 3),
-(7, 4, 110, 0, 1, 3, '2022-12-20 18:14:00', '2022-12-17 18:14:56', '0000-00-00 00:00:00', 0, 1, 3),
+(7, 4, 110, 3, 1, 3, '2022-12-20 18:14:00', '2022-12-17 18:14:56', '0000-00-00 00:00:00', 0, 1, 3),
 (8, 4, 339, 0, 10, 4, '1980-11-23 10:30:00', '2022-12-17 18:30:24', '0000-00-00 00:00:00', 4, 4, 1);
 
 -- --------------------------------------------------------
