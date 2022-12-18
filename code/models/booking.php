@@ -92,6 +92,13 @@ class Booking extends Connection
 
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$this->user_id, $this->travel_id, $this->nbr_adults, $this->nbr_kids, $this->date]);
+            if ($stmt) {
+                  $nbr = $this->nbr_adults + $this->nbr_kids;
+                  $sql = "UPDATE `travels` SET `seat`=`seat`+ ? WHERE id= ?;";
+
+                  $stmt = $this->connect()->prepare($sql);
+                  $stmt->execute([$nbr, $this->travel_id]);
+            }
             return $stmt;
       }
 }
