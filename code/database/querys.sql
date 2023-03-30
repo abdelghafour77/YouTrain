@@ -15,7 +15,6 @@ inner join cities as c_start on c_start.id=s_start.city_id
 inner join cities as c_end on c_end.id=s_end.city_id
 
 
-
 SELECT 
                 travels.* ,
                 trains.name as train,
